@@ -1,0 +1,35 @@
+{
+  "source_provider_id": "HOSPITAL_B",
+  "records": [
+    {
+      "patient_reference": "SYN001",
+      "investigation": "Fasting Blood Glucose",
+      "value": 95,
+      "measurement_unit": "mg/dL"
+    },
+    {
+      "patient_reference": "SYN002",
+      "investigation": "Hemoglobin A1c",
+      "value": 5.7,
+      "measurement_unit": "%"
+    },
+    {
+      "patient_reference": "SYN003",
+      "investigation": "Serum Creatinine",
+      "value": 0.9,
+      "measurement_unit": "mg/dL"
+    },
+    {
+      "patient_reference": "SYN004",
+      "investigation": "Total Cholesterol",
+      "value": 185,
+      "measurement_unit": "mg/dL"
+    },
+    {
+      "patient_reference": "SYN005",
+      "investigation": "Platelet Count",
+      "value": 250000,
+      "measurement_unit": "/uL"
+    }
+  ]
+}

@@ -1,0 +1,247 @@
+{
+  "description": "Synthetic patient identity and linkage test fixtures for M4 research prototype.",
+  "disclaimer": "All identifiers and demographics are purely synthetic. No real patient data or official ABDM/ABHA credentials are used.",
+  "fixtures": {
+    "scenario_01_same_local_id_diff_providers": {
+      "description": "Same local ID string across two different providers without strong linkage token.",
+      "item": {
+        "comparison_id": "comp_syn_001",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_100",
+          "identity_token": null
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_100",
+          "identity_token": null
+        }
+      },
+      "expected_status": "unresolved",
+      "expected_reason_code": "SAME_LOCAL_ID_DIFFERENT_PROVIDERS",
+      "expected_review_required": false
+    },
+    "scenario_02_different_local_references_no_evidence": {
+      "description": "Different local references with no other evidence.",
+      "item": {
+        "comparison_id": "comp_syn_002",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_101",
+          "identity_token": null
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_102",
+          "identity_token": null
+        }
+      },
+      "expected_status": "unresolved",
+      "expected_reason_code": "IDENTITY_EVIDENCE_MISSING",
+      "expected_review_required": false
+    },
+    "scenario_03_matching_synthetic_linkage_tokens": {
+      "description": "Matching synthetic linkage tokens with valid provider contexts.",
+      "item": {
+        "comparison_id": "comp_syn_003",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_103",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_104",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        }
+      },
+      "expected_status": "same_identity",
+      "expected_reason_code": "STRONG_SYNTHETIC_LINKAGE_MATCH",
+      "expected_review_required": false
+    },
+    "scenario_04_different_synthetic_linkage_tokens": {
+      "description": "Different synthetic linkage tokens across providers.",
+      "item": {
+        "comparison_id": "comp_syn_004",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_105",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_106",
+          "identity_token": "SYN_LINK_TOKEN_002"
+        }
+      },
+      "expected_status": "different_identity",
+      "expected_reason_code": "STRONG_SYNTHETIC_LINKAGE_CONFLICT",
+      "expected_review_required": false
+    },
+    "scenario_05_conflicting_strong_synthetic_evidence": {
+      "description": "Matching synthetic token accompanied by contradictory demographic attributes.",
+      "item": {
+        "comparison_id": "comp_syn_005",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_107",
+          "identity_token": "SYN_LINK_TOKEN_003",
+          "demographics": {
+            "first_name": "Arun",
+            "last_name": "Kumar",
+            "date_of_birth": "1978-03-12"
+          }
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_108",
+          "identity_token": "SYN_LINK_TOKEN_003",
+          "demographics": {
+            "first_name": "Priya",
+            "last_name": "Natarajan",
+            "date_of_birth": "1994-08-25"
+          }
+        }
+      },
+      "expected_status": "review_required",
+      "expected_reason_code": "IDENTITY_EVIDENCE_CONFLICT",
+      "expected_review_required": true
+    },
+    "scenario_06_missing_provider_context": {
+      "description": "Missing provider context on one reference.",
+      "item": {
+        "comparison_id": "comp_syn_006",
+        "record_a": {
+          "source_provider_id": null,
+          "local_patient_id": "SYN_PATIENT_109",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_110",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        }
+      },
+      "expected_status": "unresolved",
+      "expected_reason_code": "PROVIDER_CONTEXT_MISSING",
+      "expected_review_required": false
+    },
+    "scenario_07_missing_local_patient_reference": {
+      "description": "Missing local patient reference identifier.",
+      "item": {
+        "comparison_id": "comp_syn_007",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_112",
+          "identity_token": "SYN_LINK_TOKEN_001"
+        }
+      },
+      "expected_status": "unresolved",
+      "expected_reason_code": "LOCAL_REFERENCE_MISSING",
+      "expected_review_required": false
+    },
+    "scenario_08_matching_names_no_strong_evidence": {
+      "description": "Matching names across providers without strong identity token.",
+      "item": {
+        "comparison_id": "comp_syn_008",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_113",
+          "identity_token": null,
+          "demographics": {
+            "first_name": "Sita",
+            "last_name": "Raman"
+          }
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_114",
+          "identity_token": null,
+          "demographics": {
+            "first_name": "Sita",
+            "last_name": "Raman"
+          }
+        }
+      },
+      "expected_status": "possible_match",
+      "expected_reason_code": "DEMOGRAPHIC_EVIDENCE_INSUFFICIENT",
+      "expected_review_required": false
+    },
+    "scenario_09_matching_dobs_no_strong_evidence": {
+      "description": "Matching dates of birth without strong identity token.",
+      "item": {
+        "comparison_id": "comp_syn_009",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_115",
+          "identity_token": null,
+          "demographics": {
+            "date_of_birth": "1985-06-15"
+          }
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_116",
+          "identity_token": null,
+          "demographics": {
+            "date_of_birth": "1985-06-15"
+          }
+        }
+      },
+      "expected_status": "possible_match",
+      "expected_reason_code": "DEMOGRAPHIC_EVIDENCE_INSUFFICIENT",
+      "expected_review_required": false
+    },
+    "scenario_10_matching_local_ids_and_demographics_no_token": {
+      "description": "Matching local IDs and demographic attributes across providers without strong evidence.",
+      "item": {
+        "comparison_id": "comp_syn_010",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_200",
+          "identity_token": null,
+          "demographics": {
+            "first_name": "Ramesh",
+            "last_name": "Kumar",
+            "date_of_birth": "1975-04-10"
+          }
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_200",
+          "identity_token": null,
+          "demographics": {
+            "first_name": "Ramesh",
+            "last_name": "Kumar",
+            "date_of_birth": "1975-04-10"
+          }
+        }
+      },
+      "expected_status": "possible_match",
+      "expected_reason_code": "DEMOGRAPHIC_EVIDENCE_INSUFFICIENT",
+      "expected_review_required": false
+    },
+    "scenario_11_missing_identity_evidence": {
+      "description": "Missing all identity evidence and tokens.",
+      "item": {
+        "comparison_id": "comp_syn_011",
+        "record_a": {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_201"
+        },
+        "record_b": {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_202"
+        }
+      },
+      "expected_status": "unresolved",
+      "expected_reason_code": "IDENTITY_EVIDENCE_MISSING",
+      "expected_review_required": false
+    }
+  }
+}

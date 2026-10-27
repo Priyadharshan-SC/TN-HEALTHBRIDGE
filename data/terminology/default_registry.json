@@ -1,0 +1,316 @@
+{
+  "registry_version": "1.0.0",
+  "description": "TN HealthBridge Default Local Clinical Terminology Mapping Registry (Standard LOINC & Synthetic Test Concepts)",
+  "last_updated": "2026-10-25T12:00:00Z",
+  "mappings": [
+    {
+      "mapping_id": "MAP-LOINC-001",
+      "source_provider_id": null,
+      "source_test_name": "Fasting Blood Glucose",
+      "source_aliases": [
+        "FBS",
+        "Glucose, Fasting",
+        "Fasting Glucose",
+        "Blood Glucose, Fasting"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "1558-6",
+      "target_display": "Fasting glucose [Mass/volume] in Serum or Plasma",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Serum",
+        "Plasma",
+        "Blood"
+      ],
+      "unit_constraints": [
+        "mg/dL"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Verified standard LOINC concept for fasting glucose mass concentration (MCnc) in blood/serum/plasma. Substance concentration (mmol/L) is represented by LOINC 14771-0 and excluded here to prevent cross-property conflation.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-002",
+      "source_provider_id": null,
+      "source_test_name": "Hemoglobin A1c",
+      "source_aliases": [
+        "HbA1c",
+        "Glycated Hemoglobin",
+        "A1c",
+        "Hemoglobin A1C"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "4548-4",
+      "target_display": "Hemoglobin A1c/Hemoglobin.total in Blood",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Blood",
+        "Whole Blood"
+      ],
+      "unit_constraints": [
+        "%"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Verified standard LOINC concept for glycated hemoglobin A1c mass fraction (NGSP protocol, %) in blood. IFCC protocol molar ratio (mmol/mol) is represented by LOINC 59261-8 and excluded here to preserve measurement property compatibility.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-003",
+      "source_provider_id": null,
+      "source_test_name": "Serum Creatinine",
+      "source_aliases": [
+        "Creatinine",
+        "S. Creatinine",
+        "Serum Cr"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "2160-0",
+      "target_display": "Creatinine [Mass/volume] in Serum or Plasma",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Serum",
+        "Plasma"
+      ],
+      "unit_constraints": [
+        "mg/dL"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Verified standard LOINC concept for creatinine mass concentration (MCnc) in serum or plasma. Substance concentration (umol/L) is represented by LOINC 14682-9 and excluded here to prevent cross-property conflation.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-004",
+      "source_provider_id": null,
+      "source_test_name": "Total Cholesterol",
+      "source_aliases": [
+        "Cholesterol, Total",
+        "Total Chol",
+        "Serum Cholesterol"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "2093-3",
+      "target_display": "Cholesterol [Mass/volume] in Serum or Plasma",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Serum",
+        "Plasma"
+      ],
+      "unit_constraints": [
+        "mg/dL"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Verified standard LOINC concept for total cholesterol mass concentration (MCnc) in serum or plasma. Substance concentration (mmol/L) is represented by LOINC 14647-2 and excluded here to prevent cross-property conflation.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-005",
+      "source_provider_id": null,
+      "source_test_name": "Platelet Count",
+      "source_aliases": [
+        "Platelets",
+        "PLT",
+        "Thrombocyte Count"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "777-3",
+      "target_display": "Platelets [#/volume] in Blood by Automated count",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Blood",
+        "Whole Blood"
+      ],
+      "unit_constraints": [
+        "/uL",
+        "10*3/uL",
+        "K/uL",
+        "x10^9/L"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Verified standard LOINC concept for automated platelet count.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-MAP-001",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Glucose Tolerance",
+      "source_aliases": [
+        "S-GTT",
+        "Synthetic GTT"
+      ],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:001",
+      "target_display": "Synthetic Glucose Tolerance Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": [
+        "Serum"
+      ],
+      "unit_constraints": [
+        "mg/dL"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Synthetic concept for automated regression testing.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-AMBIG-001",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Ambiguous Marker",
+      "source_aliases": [
+        "SAM-Marker"
+      ],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:101",
+      "target_display": "Synthetic Ambiguous Marker Alpha",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": null,
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Candidate 1 for demonstrating ambiguity detection.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-AMBIG-002",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Ambiguous Marker",
+      "source_aliases": [
+        "SAM-Marker"
+      ],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:102",
+      "target_display": "Synthetic Ambiguous Marker Beta",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": null,
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Candidate 2 for demonstrating ambiguity detection.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-SPEC-001",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Serum Only Protein",
+      "source_aliases": [],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:201",
+      "target_display": "Synthetic Serum Only Protein Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": [
+        "Serum"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Demonstrates specimen mismatch conflict.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-UNIT-001",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Milligram Analyte",
+      "source_aliases": [],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:301",
+      "target_display": "Synthetic Milligram Analyte Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": null,
+      "unit_constraints": [
+        "mg/dL"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Demonstrates unit mismatch conflict.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-REQSPEC-001",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Strict Specimen Test",
+      "source_aliases": [],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:401",
+      "target_display": "Synthetic Strict Specimen Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": [
+        "Blood",
+        "Whole Blood"
+      ],
+      "unit_constraints": null,
+      "require_specimen": true,
+      "require_unit": false,
+      "rationale": "Demonstrates missing required specimen context.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-REQUNIT-001",
+      "source_provider_id": null,
+      "source_test_name": "Synthetic Strict Unit Test",
+      "source_aliases": [],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:501",
+      "target_display": "Synthetic Strict Unit Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": null,
+      "unit_constraints": [
+        "IU/L"
+      ],
+      "require_specimen": false,
+      "require_unit": true,
+      "rationale": "Demonstrates missing required unit context.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-PROV-001",
+      "source_provider_id": "HOSPITAL_A",
+      "source_test_name": "Local Hospital Test",
+      "source_aliases": [],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:601",
+      "target_display": "Hospital A Specific Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": null,
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Demonstrates provider-specific mapping matching.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "SYNTH-REV-001",
+      "source_provider_id": null,
+      "source_test_name": "Experimental Research Assay",
+      "source_aliases": [],
+      "target_system": "http://tnhealthbridge.local/terminology/synthetic",
+      "target_code": "SYNTHETIC:LAB:701",
+      "target_display": "Experimental Research Assay Concept",
+      "mapping_status": "active",
+      "terminology_version": "SYNTH-1.0",
+      "specimen_constraints": null,
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Demonstrates human review flag.",
+      "human_review_required": true
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+patient_id,test_name,result,unit
+SYN001,Fasting Blood Glucose,95,mg/dL
+SYN002,Hemoglobin A1c,5.7,%
+SYN003,Serum Creatinine,0.9,mg/dL
+SYN004,Total Cholesterol,185,mg/dL
+SYN005,Platelet Count,250000,/uL

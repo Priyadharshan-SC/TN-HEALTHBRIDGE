@@ -1,0 +1,30 @@
+# Licensing Information
+
+This project, **TN HealthBridge — An Uncertainty-Aware Healthcare Interoperability Framework for ABDM-Aligned Data Exchange**, is currently an academic and research prototype developed for healthcare interoperability and uncertainty-aware data exchange research.
+
+## License Status
+
+As of this release, an explicit open-source or proprietary software license has not yet been formally assigned by the project maintainers.
+
+All rights are temporarily reserved by the authors and contributing institutions until a formal license selection is made.
+
+## Guidance for Maintainers
+
+Prior to public distribution or enterprise adoption, maintainers should select and apply an appropriate license suitable for health informatics and public health interoperability research. Common candidates include:
+
+1. **Apache License 2.0** *(Recommended for open-source healthcare platforms)*:
+   - Grants liberal reuse, modification, and distribution.
+   - Provides an express grant of patent rights.
+   - Requires clear attribution, disclaimer of warranty, and documentation of modifications.
+   - Aligns well with national digital health standards and public-good software initiatives.
+
+2. **MIT License**:
+   - Highly permissive, lightweight, and widely understood.
+   - Grants permission to use, copy, modify, merge, publish, distribute, sublicense, and sell.
+   - Includes standard disclaimers of liability and warranty.
+
+3. **GNU Affero General Public License v3 (AGPLv3)**:
+   - Strong copyleft license designed for network-accessible server software and web services.
+   - Requires that complete corresponding source code be made available to network users.
+
+To apply a license, replace the contents of this file with the complete official license text and update the metadata in `pyproject.toml` and `README.md`.

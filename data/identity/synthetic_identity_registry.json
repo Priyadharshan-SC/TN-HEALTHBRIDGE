@@ -1,0 +1,172 @@
+{
+  "registry_version": "1.0.0",
+  "description": "Authoritative controlled synthetic identity fixture registry for TN HealthBridge M4 testing. Binds synthetic linkage tokens exclusively to authorized provider-scoped references.",
+  "disclaimer": "All subjects, tokens, and references are simulated synthetic test fixtures. They are NOT real-world identity credentials, official ABHA identifiers, or government identity tokens.",
+  "last_updated": "2026-10-27T15:00:00Z",
+  "identities": [
+    {
+      "synthetic_subject_id": "SYN_SUBJ_001",
+      "identity_token": "SYN_LINK_TOKEN_001",
+      "fixture_version": "1.0.0",
+      "description": "Primary synthetic subject authorized for cross-provider linkage simulation.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_103"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_104"
+        },
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_105"
+        },
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_P1"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_P2"
+        },
+        {
+          "source_provider_id": "LAB_C",
+          "local_patient_id": "SYN_P2"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_002",
+      "identity_token": "SYN_LINK_TOKEN_002",
+      "fixture_version": "1.0.0",
+      "description": "Distinct synthetic subject for testing negative/different linkage outcomes.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_106_A"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_106"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_003",
+      "identity_token": "SYN_LINK_TOKEN_003",
+      "fixture_version": "1.0.0",
+      "description": "Synthetic subject for demographic contradiction and review escalation testing.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_107"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_108"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_999",
+      "identity_token": "SYN_LINK_TOKEN_999",
+      "fixture_version": "1.0.0",
+      "description": "Synthetic subject fixture for positive cross-hospital linkage.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PATIENT_001"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PATIENT_002"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_SECRET",
+      "identity_token": "SYN_SECRET_TOKEN_XYZ_777",
+      "fixture_version": "1.0.0",
+      "description": "Synthetic subject for testing privacy-safe logging and non-exposure.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_PAT_001"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_PAT_002"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_BATCH_1",
+      "identity_token": "SYN_TOKEN_1",
+      "fixture_version": "1.0.0",
+      "description": "Batch item synthetic subject 1.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "P1"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "P2"
+        },
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "P3"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_BATCH_2",
+      "identity_token": "SYN_TOKEN_2",
+      "fixture_version": "1.0.0",
+      "description": "Batch item synthetic subject 2.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "P4_A"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "P4"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_BATCH_3",
+      "identity_token": "SYN_TOKEN_3",
+      "fixture_version": "1.0.0",
+      "description": "Batch item synthetic subject 3 for conflict testing.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "P8"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "P9"
+        }
+      ]
+    },
+    {
+      "synthetic_subject_id": "SYN_SUBJ_API_MATCH",
+      "identity_token": "SYN_TOKEN_MATCH",
+      "fixture_version": "1.0.0",
+      "description": "Synthetic subject for API integration tests.",
+      "authorized_scoped_references": [
+        {
+          "source_provider_id": "HOSPITAL_A",
+          "local_patient_id": "SYN_API_P1"
+        },
+        {
+          "source_provider_id": "HOSPITAL_B",
+          "local_patient_id": "SYN_API_P2"
+        }
+      ]
+    }
+  ]
+}

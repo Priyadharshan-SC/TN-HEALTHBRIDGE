@@ -1,0 +1,333 @@
+[
+  {
+    "artefact": {
+      "consent_id": "CONSENT-REQ-A3D640",
+      "status": "GRANTED",
+      "created_at": "2026-10-28T16:48:47.157465Z",
+      "patient": {
+        "id": "UPID-F7908E72"
+      },
+      "purpose": {
+        "code": "CAREMGT",
+        "text": "Care Management and Consultation",
+        "ref_uri": null
+      },
+      "hip": {
+        "id": "LAB_E",
+        "name": "LAB_E"
+      },
+      "hiu": {
+        "id": "HOSPITAL_D",
+        "name": "HOSPITAL_D"
+      },
+      "requester": null,
+      "permission": {
+        "access_mode": "VIEW",
+        "date_range": {
+          "from_date": "2025-10-28T16:48:47.157465Z",
+          "to_date": "2027-10-28T16:48:47.157465Z"
+        },
+        "data_erase_at": "2028-10-27T16:48:47.157465Z",
+        "frequency": {
+          "unit": "HOUR",
+          "value": 1,
+          "repeats": 0
+        }
+      },
+      "consent_expiry": null,
+      "hi_types": [
+        "DiagnosticReport"
+      ],
+      "signature": "TEST_SIG_CONSENT-REQ-A3D640"
+    },
+    "version": 2,
+    "lifecycle_history": [
+      {
+        "timestamp": "2026-10-28T16:49:20.823330+00:00",
+        "from_status": "REQUESTED",
+        "to_status": "GRANTED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Patient decided GRANT"
+      }
+    ],
+    "registered_at": "2026-10-28T16:48:47.157465+00:00",
+    "last_updated_at": "2026-10-28T16:49:20.823330+00:00"
+  },
+  {
+    "artefact": {
+      "consent_id": "CONSENT-REQ-A991FC",
+      "status": "GRANTED",
+      "created_at": "2026-10-28T16:50:05.604195Z",
+      "patient": {
+        "id": "UPID-F7908E72"
+      },
+      "purpose": {
+        "code": "CAREMGT",
+        "text": "Care Management and Consultation",
+        "ref_uri": null
+      },
+      "hip": {
+        "id": "HOSPITAL_A",
+        "name": "HOSPITAL_A"
+      },
+      "hiu": {
+        "id": "HOSPITAL_D",
+        "name": "HOSPITAL_D"
+      },
+      "requester": null,
+      "permission": {
+        "access_mode": "VIEW",
+        "date_range": {
+          "from_date": "2025-10-28T16:50:05.604195Z",
+          "to_date": "2027-10-28T16:50:05.604195Z"
+        },
+        "data_erase_at": "2028-10-27T16:50:05.604195Z",
+        "frequency": {
+          "unit": "HOUR",
+          "value": 1,
+          "repeats": 0
+        }
+      },
+      "consent_expiry": null,
+      "hi_types": [
+        "DiagnosticReport"
+      ],
+      "signature": "TEST_SIG_CONSENT-REQ-A991FC"
+    },
+    "version": 2,
+    "lifecycle_history": [
+      {
+        "timestamp": "2026-10-28T16:50:08.640028+00:00",
+        "from_status": "REQUESTED",
+        "to_status": "GRANTED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Patient decided GRANT"
+      }
+    ],
+    "registered_at": "2026-10-28T16:50:05.605197+00:00",
+    "last_updated_at": "2026-10-28T16:50:08.640028+00:00"
+  },
+  {
+    "artefact": {
+      "consent_id": "CONSENT-REQ-245E44",
+      "status": "GRANTED",
+      "created_at": "2026-10-28T16:50:19.915877Z",
+      "patient": {
+        "id": "UPID-F7908E72"
+      },
+      "purpose": {
+        "code": "CAREMGT",
+        "text": "Care Management and Consultation",
+        "ref_uri": null
+      },
+      "hip": {
+        "id": "HOSPITAL_A",
+        "name": "HOSPITAL_A"
+      },
+      "hiu": {
+        "id": "LAB_C",
+        "name": "LAB_C"
+      },
+      "requester": null,
+      "permission": {
+        "access_mode": "VIEW",
+        "date_range": {
+          "from_date": "2025-10-28T16:50:19.915877Z",
+          "to_date": "2027-10-28T16:50:19.915877Z"
+        },
+        "data_erase_at": "2028-10-27T16:50:19.915877Z",
+        "frequency": {
+          "unit": "HOUR",
+          "value": 1,
+          "repeats": 0
+        }
+      },
+      "consent_expiry": null,
+      "hi_types": [
+        "DiagnosticReport"
+      ],
+      "signature": "TEST_SIG_CONSENT-REQ-245E44"
+    },
+    "version": 2,
+    "lifecycle_history": [
+      {
+        "timestamp": "2026-10-28T16:50:25.014624+00:00",
+        "from_status": "REQUESTED",
+        "to_status": "GRANTED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Patient decided GRANT"
+      }
+    ],
+    "registered_at": "2026-10-28T16:50:19.915877+00:00",
+    "last_updated_at": "2026-10-28T16:50:25.014624+00:00"
+  },
+  {
+    "artefact": {
+      "consent_id": "CONSENT-REQ-3A9EF6",
+      "status": "REVOKED",
+      "created_at": "2026-10-28T16:53:08.020775Z",
+      "patient": {
+        "id": "1234"
+      },
+      "purpose": {
+        "code": "CAREMGT",
+        "text": "Care Management and Consultation",
+        "ref_uri": null
+      },
+      "hip": {
+        "id": "LAB_C",
+        "name": "LAB_C"
+      },
+      "hiu": {
+        "id": "CLINIC_F",
+        "name": "CLINIC_F"
+      },
+      "requester": null,
+      "permission": {
+        "access_mode": "VIEW",
+        "date_range": {
+          "from_date": "2025-10-28T16:53:08.020775Z",
+          "to_date": "2027-10-28T16:53:08.020775Z"
+        },
+        "data_erase_at": "2028-10-27T16:53:08.020775Z",
+        "frequency": {
+          "unit": "HOUR",
+          "value": 1,
+          "repeats": 0
+        }
+      },
+      "consent_expiry": null,
+      "hi_types": [
+        "DiagnosticReport"
+      ],
+      "signature": "TEST_SIG_CONSENT-REQ-3A9EF6"
+    },
+    "version": 3,
+    "lifecycle_history": [
+      {
+        "timestamp": "2026-10-28T16:53:16.813842+00:00",
+        "from_status": "REQUESTED",
+        "to_status": "GRANTED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Patient decided GRANT"
+      },
+      {
+        "timestamp": "2026-10-28T16:57:57.976830+00:00",
+        "from_status": "GRANTED",
+        "to_status": "REVOKED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Consent revoked by patient via Patient Portal"
+      }
+    ],
+    "registered_at": "2026-10-28T16:53:08.020775+00:00",
+    "last_updated_at": "2026-10-28T16:57:57.976830+00:00"
+  },
+  {
+    "artefact": {
+      "consent_id": "CONSENT-REQ-A94DBA",
+      "status": "GRANTED",
+      "created_at": "2026-10-28T16:53:41.317338Z",
+      "patient": {
+        "id": "1234"
+      },
+      "purpose": {
+        "code": "CAREMGT",
+        "text": "Care Management and Consultation",
+        "ref_uri": null
+      },
+      "hip": {
+        "id": "LAB_C",
+        "name": "LAB_C"
+      },
+      "hiu": {
+        "id": "HOSPITAL_A",
+        "name": "HOSPITAL_A"
+      },
+      "requester": null,
+      "permission": {
+        "access_mode": "VIEW",
+        "date_range": {
+          "from_date": "2025-10-28T16:53:41.317338Z",
+          "to_date": "2027-10-28T16:53:41.317338Z"
+        },
+        "data_erase_at": "2028-10-27T16:53:41.317338Z",
+        "frequency": {
+          "unit": "HOUR",
+          "value": 1,
+          "repeats": 0
+        }
+      },
+      "consent_expiry": null,
+      "hi_types": [
+        "DiagnosticReport"
+      ],
+      "signature": "TEST_SIG_CONSENT-REQ-A94DBA"
+    },
+    "version": 2,
+    "lifecycle_history": [
+      {
+        "timestamp": "2026-10-28T16:53:48.180175+00:00",
+        "from_status": "REQUESTED",
+        "to_status": "GRANTED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Patient decided GRANT"
+      }
+    ],
+    "registered_at": "2026-10-28T16:53:41.317338+00:00",
+    "last_updated_at": "2026-10-28T16:53:48.180175+00:00"
+  },
+  {
+    "artefact": {
+      "consent_id": "CONSENT-REQ-1B1E1F",
+      "status": "GRANTED",
+      "created_at": "2026-10-29T06:38:28.766607Z",
+      "patient": {
+        "id": "GVC 9082"
+      },
+      "purpose": {
+        "code": "CAREMGT",
+        "text": "Care Management and Consultation",
+        "ref_uri": null
+      },
+      "hip": {
+        "id": "CLINIC_F",
+        "name": "CLINIC_F"
+      },
+      "hiu": {
+        "id": "LAB_C",
+        "name": "LAB_C"
+      },
+      "requester": null,
+      "permission": {
+        "access_mode": "VIEW",
+        "date_range": {
+          "from_date": "2025-10-29T06:38:28.766607Z",
+          "to_date": "2027-10-29T06:38:28.766607Z"
+        },
+        "data_erase_at": "2028-10-28T06:38:28.766607Z",
+        "frequency": {
+          "unit": "HOUR",
+          "value": 1,
+          "repeats": 0
+        }
+      },
+      "consent_expiry": null,
+      "hi_types": [
+        "DiagnosticReport"
+      ],
+      "signature": "TEST_SIG_CONSENT-REQ-1B1E1F"
+    },
+    "version": 2,
+    "lifecycle_history": [
+      {
+        "timestamp": "2026-10-29T06:38:48.776809+00:00",
+        "from_status": "REQUESTED",
+        "to_status": "GRANTED",
+        "actor": "ARUN_PATIENT",
+        "reason": "Patient decided GRANT"
+      }
+    ],
+    "registered_at": "2026-10-29T06:38:28.766607+00:00",
+    "last_updated_at": "2026-10-29T06:38:48.776809+00:00"
+  }
+]

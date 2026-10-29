@@ -8,10 +8,15 @@
       "source_provider_id": null,
       "source_test_name": "Fasting Blood Glucose",
       "source_aliases": [
-        "FBS",
-        "Glucose, Fasting",
+        "Fasting Blood Sugar",
+        "Fasting Sugar",
+        "Blood Glucose, Fasting",
         "Fasting Glucose",
-        "Blood Glucose, Fasting"
+        "Fasting Plasma Glucose",
+        "FBS",
+        "Glucose, Fasting (mg/dL)",
+        "Glucose, Fasting",
+        "FBS (mg/dL)"
       ],
       "target_system": "http://loinc.org",
       "target_code": "1558-6",
@@ -311,6 +316,321 @@
       "require_unit": false,
       "rationale": "Demonstrates human review flag.",
       "human_review_required": true
+    },
+    {
+      "mapping_id": "MAP-LOINC-006",
+      "source_provider_id": null,
+      "source_test_name": "Fasting Glucose (mmol/L)",
+      "source_aliases": [
+        "FBS (mmol/L)",
+        "Glucose, Fasting (mmol/L)",
+        "Fasting Blood Sugar (mmol/L)",
+        "Fasting Plasma Glucose (mmol/L)",
+        "Serum Fasting Glucose (mmol/L)"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "14771-0",
+      "target_display": "Glucose [Moles/volume] in Serum or Plasma",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Serum",
+        "Plasma",
+        "Blood"
+      ],
+      "unit_constraints": [
+        "mmol/L"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for fasting glucose substance concentration (mmol/L) in serum or plasma.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-007",
+      "source_provider_id": null,
+      "source_test_name": "Random Blood Sugar",
+      "source_aliases": [
+        "RBS",
+        "Blood Sugar Random",
+        "GRBS",
+        "General Random Blood Sugar",
+        "Random Plasma Glucose"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "2339-0",
+      "target_display": "Glucose [Mass/volume] in Blood",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Blood",
+        "Whole Blood",
+        "Serum",
+        "Plasma"
+      ],
+      "unit_constraints": [
+        "mg/dL",
+        "mmol/L"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for random blood sugar mass concentration.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-008",
+      "source_provider_id": null,
+      "source_test_name": "Systolic Blood Pressure",
+      "source_aliases": [
+        "Systolic BP",
+        "BP Systolic",
+        "Blood Pressure (Systolic)",
+        "Sys BP",
+        "SBP",
+        "Systolic Pressure"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "8480-6",
+      "target_display": "Systolic blood pressure",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": null,
+      "unit_constraints": [
+        "mm[Hg]",
+        "mmHg"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for systolic blood pressure measurement.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-009",
+      "source_provider_id": null,
+      "source_test_name": "Diastolic Blood Pressure",
+      "source_aliases": [
+        "Diastolic BP",
+        "BP Diastolic",
+        "Blood Pressure (Diastolic)",
+        "Dia BP",
+        "DBP",
+        "Diastolic Pressure"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "8462-4",
+      "target_display": "Diastolic blood pressure",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": null,
+      "unit_constraints": [
+        "mm[Hg]",
+        "mmHg"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for diastolic blood pressure measurement.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-010",
+      "source_provider_id": null,
+      "source_test_name": "Blood Pressure",
+      "source_aliases": [
+        "BP Reading",
+        "BP Panel",
+        "Blood Pressure Measurement",
+        "BP",
+        "Vital Signs - Blood Pressure"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "85354-9",
+      "target_display": "Blood pressure panel with all children optional",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": null,
+      "unit_constraints": [
+        "mm[Hg]",
+        "mmHg"
+      ],
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for composite blood pressure panel.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-011",
+      "source_provider_id": null,
+      "source_test_name": "GeneXpert MTB/RIF",
+      "source_aliases": [
+        "Mycobacterium tuberculosis DNA (GeneXpert)",
+        "MTB Complex PCR (GeneXpert)",
+        "TB GeneXpert",
+        "GeneXpert MTB",
+        "MTB DNA PCR",
+        "Tuberculosis PCR",
+        "TB NAAT",
+        "CBNAAT"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "89371-9",
+      "target_display": "Mycobacterium tuberculosis complex DNA [Presence] in Sputum by NAA with probe detection",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Sputum",
+        "Respiratory",
+        "Bronchial Wash",
+        "Saliva"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for automated GeneXpert molecular assay detecting MTB complex DNA.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-012",
+      "source_provider_id": null,
+      "source_test_name": "Sputum AFB Smear",
+      "source_aliases": [
+        "Acid Fast Bacilli",
+        "Sputum Acid Fast Bacilli (AFB)",
+        "AFB Smear",
+        "Sputum Smear for AFB",
+        "Acid-Fast Bacilli Stain",
+        "TB Sputum Smear",
+        "AFB Stain"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "20507-0",
+      "target_display": "Mycobacterium sp identified in Sputum by Acid fast stain",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Sputum",
+        "Respiratory"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for microscopic identification of Mycobacterium in sputum by acid-fast smear.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-013",
+      "source_provider_id": null,
+      "source_test_name": "Dengue NS1 Antigen",
+      "source_aliases": [
+        "Dengue NS1 Ag Rapid Screen",
+        "Dengue Rapid Test (NS1)",
+        "Dengue NS1",
+        "Dengue Antigen NS1",
+        "NS1 Antigen",
+        "Dengue NS1 Ag",
+        "NS1 Ag Rapid Test"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "68994-3",
+      "target_display": "Dengue virus NS1 Ag [Presence] in Serum or Plasma by Rapid immunoassay",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Serum",
+        "Plasma",
+        "Blood",
+        "Whole Blood"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for Dengue virus NS1 antigen detection via rapid immunoassay.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-014",
+      "source_provider_id": null,
+      "source_test_name": "Dengue IgM Antibody",
+      "source_aliases": [
+        "Dengue Serology (IgM/IgG)",
+        "Dengue Serology (IgM)",
+        "Dengue IgM",
+        "Dengue Antibody IgM",
+        "Dengue IgM Rapid"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "51785-4",
+      "target_display": "Dengue virus IgM Ab [Presence] in Serum or Plasma by Rapid immunoassay",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Serum",
+        "Plasma",
+        "Blood",
+        "Whole Blood"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for Dengue virus IgM qualitative serology.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-015",
+      "source_provider_id": null,
+      "source_test_name": "Malaria Rapid Diagnostic Test (RDT)",
+      "source_aliases": [
+        "Malaria Antigen (Pf/Pv)",
+        "Malaria Parasite Screen (RDT)",
+        "Malaria Rapid Antigen",
+        "Malaria Ag (Pf/Pv)",
+        "Malaria RDT",
+        "Rapid Malaria Antigen",
+        "Malaria Ag Pf/Pv Rapid"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "73961-5",
+      "target_display": "Plasmodium sp antigen [Presence] in Blood by Rapid immunoassay",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Blood",
+        "Whole Blood",
+        "Capillary Blood"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for rapid diagnostic detection of Plasmodium falciparum / vivax antigens in blood.",
+      "human_review_required": false
+    },
+    {
+      "mapping_id": "MAP-LOINC-016",
+      "source_provider_id": null,
+      "source_test_name": "Malaria Blood Smear",
+      "source_aliases": [
+        "Peripheral Blood Smear for Malaria",
+        "Peripheral Smear for Malarial Parasite",
+        "Malaria Parasite Smear",
+        "Malarial Parasites Smear",
+        "MP Smear",
+        "Blood Smear for Malarial Parasite",
+        "PS for MP"
+      ],
+      "target_system": "http://loinc.org",
+      "target_code": "23827-9",
+      "target_display": "Microscopic observation [Identifier] in Blood by Thin smear",
+      "mapping_status": "active",
+      "terminology_version": "2.76",
+      "specimen_constraints": [
+        "Blood",
+        "Whole Blood",
+        "Capillary Blood"
+      ],
+      "unit_constraints": null,
+      "require_specimen": false,
+      "require_unit": false,
+      "rationale": "Standard LOINC for microscopic blood smear examination for malarial parasites.",
+      "human_review_required": false
     }
   ]
 }

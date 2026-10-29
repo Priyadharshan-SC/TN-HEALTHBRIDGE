@@ -1,0 +1,93 @@
+[
+  {
+    "user_id": "USR-001",
+    "organization_id": "HOSPITAL_A",
+    "username": "hospital_a_operator",
+    "full_name": "Dr. Senthil Nathan",
+    "email": "senthil.n@cityhospital1.tn.gov.in",
+    "role": "HOSPITAL_OPERATOR",
+    "department": "Interoperability & Data Exchanges",
+    "password_hash": "salt_hosp_a_001$549bd39ba326ed8a9e133695c0ef94c394844fa732a2fa763bec084bae23abb7",
+    "is_active": true,
+    "created_at": "2026-01-10T00:00:00Z",
+    "last_login": null
+  },
+  {
+    "user_id": "USR-002",
+    "organization_id": "LAB_C",
+    "username": "lab_c_provider",
+    "full_name": "Kavitha Rajan",
+    "email": "kavitha.r@centrallab.tn.gov.in",
+    "role": "DATA_PROVIDER",
+    "department": "Biochemistry Lab Operations",
+    "password_hash": "salt_lab_c_001$f29e4834be63eb15243155d8b4c5acf986094869a856a3bde1e43e756dad083f",
+    "is_active": true,
+    "created_at": "2026-01-15T00:00:00Z",
+    "last_login": null
+  },
+  {
+    "user_id": "USR-003",
+    "organization_id": "HOSPITAL_B",
+    "username": "hospital_b_requester",
+    "full_name": "Ramesh V",
+    "email": "ramesh.v@metrohospital.tn.gov.in",
+    "role": "DATA_REQUESTER",
+    "department": "Outpatient Referrals",
+    "password_hash": "salt_hosp_b_001$0901ecfe19b548123392f5eecdfcb0246446d0ee32491d2ea327e16556cd5098",
+    "is_active": true,
+    "created_at": "2026-02-01T00:00:00Z",
+    "last_login": null
+  },
+  {
+    "user_id": "USR-004",
+    "organization_id": "HOSPITAL_D",
+    "username": "hospital_d_operator",
+    "full_name": "Anand Mohan",
+    "email": "anand.m@sunrisehospital.tn.gov.in",
+    "role": "HOSPITAL_OPERATOR",
+    "department": "Health Informatics",
+    "password_hash": "salt_hosp_d_001$4a5f1c4825dec99e2e69823b6be915bfa21d096975315b18a17725464b322732",
+    "is_active": true,
+    "created_at": "2026-03-01T00:00:00Z",
+    "last_login": null
+  },
+  {
+    "user_id": "USR-005",
+    "organization_id": "LAB_E",
+    "username": "lab_e_operator",
+    "full_name": "Deepa Sundaram",
+    "email": "deepa.s@elitediagnostics.tn.gov.in",
+    "role": "DATA_PROVIDER",
+    "department": "Pathology Dispatch",
+    "password_hash": "salt_lab_e_001$946a94894e4a8d040a2696ab6ca8347c73591c9a15a52336822794961c1e5fd5",
+    "is_active": true,
+    "created_at": "2026-03-15T00:00:00Z",
+    "last_login": null
+  },
+  {
+    "user_id": "USR-006",
+    "organization_id": "CLINIC_F",
+    "username": "clinic_f_operator",
+    "full_name": "Dr. Meenakshi Sundaram",
+    "email": "dr.meenakshi@greenvalleyclinic.tn.gov.in",
+    "role": "HOSPITAL_OPERATOR",
+    "department": "Family Medicine & Records",
+    "password_hash": "salt_clinic_f_001$37fb968ee425fe8168e386676bb57480783712c42438f91de8b995c96c50880f",
+    "is_active": true,
+    "created_at": "2026-04-01T00:00:00Z",
+    "last_login": null
+  },
+  {
+    "user_id": "USR-167742",
+    "organization_id": "HOSPITAL_A",
+    "username": "dr_9024e9",
+    "full_name": "Dr. K. Subramaniam",
+    "email": "subramaniam_9024e9@cityhospital1.tn.gov.in",
+    "role": "HOSPITAL_OPERATOR",
+    "department": "Cardiology",
+    "password_hash": "0049f6b1a931fc81efeabd9238bf8b6d$3aa451a0352896948a766de1ce092fb2e9964d7979a16f03a31216c07c14a0d4",
+    "is_active": true,
+    "created_at": "2026-10-28T13:54:24.342409+00:00",
+    "last_login": null
+  }
+]

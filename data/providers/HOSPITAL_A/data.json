@@ -1,0 +1,21 @@
+{
+  "name": "City Hospital 1 (Government General Hospital, Chennai)",
+  "patients": [],
+  "records": [],
+  "inbox": [
+    {
+      "delivery_id": "DELIV-12710191-de9f-4745-a7f7-a5967bea23b3",
+      "job_id": "JOB-EXCH-6fa19a0e-c055-480e-8a0a-22cb95ad65dc",
+      "sender_provider_id": "LAB_C",
+      "sender_provider_name": "LAB_C",
+      "patient_name": "Priyadharshan S",
+      "universal_patient_id": "UPID-667EFF64",
+      "local_patient_id": "LOCAL-UPID-667EFF64",
+      "data_type": "FHIR R4 DiagnosticReport",
+      "received_at": "2026-10-28T16:53:51.241675+00:00",
+      "integrity_digest": "6f05ebfaa038720a07e47b9afdfa998487a7b198d903db4c76f42a65ea8b34ee",
+      "receipt_id": "RCPT-SIM-5b7cda3b-387d-4661-b8c6-0d21f703240c",
+      "summary": "Received 3 observations (Systolic Blood Pressure, Diastolic Blood Pressure, GeneXpert MTB/RIF) for UPID-667EFF64 from LAB_C"
+    }
+  ]
+}

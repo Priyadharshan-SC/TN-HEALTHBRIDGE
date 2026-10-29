@@ -1,90 +1,78 @@
-# Module Dependencies & Coupling Architecture
+# TN HealthBridge Module Dependencies & Interoperability Architecture
 
-## 1. Overview
+This document formalizes the architectural contracts, data interfaces, and execution flow across the seven core modules (M1–M7) and auxiliary federation services.
 
-TN HealthBridge is structured to maintain **low inter-module coupling** and **high functional cohesion**. Each module (M1 through M4) operates autonomously through strongly-typed Pydantic schemas and stateless service classes.
+---
+
+## 1. Architectural Dependency Hierarchy
 
 ```mermaid
 graph TD
-    subgraph Core [Shared Core Infrastructure]
-        Config["app.core.config<br/>(Settings, ALLOWED_PROVIDERS)"]
-        Errors["app.core.errors<br/>(Domain Exceptions & Error Codes)"]
-        NormConfig["app.core.normalization_config<br/>(Provider Profiles, Field Mappings)"]
-        TermConfig["app.core.terminology_config<br/>(Registry Loader & Validation)"]
-        IdentConfig["app.core.identity_config<br/>(Synthetic Identity Registry & Fixtures)"]
-    end
+    M1["M1: Data Ingestion<br/>(Stream bounding, syntax validation)"]
+    M2["M2: Data Normalization<br/>(CanonicalLabRecord, quality states)"]
+    M3["M3: Clinical Terminology<br/>(LOINC/SNOMED CT, ambiguity detection)"]
+    M4["M4: Patient Identity Safety<br/>(Provider scoping, zero-merge linkage)"]
+    M5["M5: FHIR Bundle Assembly<br/>(FHIR R4 Document, Composition topology)"]
+    M6["M6: Consent & Security Gateway<br/>(ABDM consent lifecycle, 6 release gates)"]
+    M7["M7: Federated Exchange & Delivery<br/>(ECDSA P-256 receipts, bounded retries)"]
 
-    subgraph Schemas [Pydantic Contract Schemas]
-        S_M1["app.schemas.ingestion<br/>(IngestionResponse, IngestedRecord)"]
-        S_M2["app.schemas.normalization<br/>(CanonicalLabRecord, NormalizationResponse)"]
-        S_M3["app.schemas.terminology<br/>(TerminologyBatchResponse, MappedRecord)"]
-        S_M4["app.schemas.identity<br/>(IdentityAssessmentBatchRequest, Response)"]
-    end
+    UPID["Universal Patient Identity Registry"]
+    TenantNodes["6 Federated Provider Nodes"]
+    PatientPortal["Patient Portal API"]
+    AuditLog["Audit & Governance Service"]
 
-    subgraph Services [Stateless Domain Services]
-        Svc_M1["IngestionService<br/>(Stream parser, allowlist validator)"]
-        Svc_M2["NormalizationService<br/>(Schema mapper, type coerces, QA)"]
-        Svc_M3["TerminologyService<br/>(Registry match, context rules)"]
-        Svc_M4["IdentityService<br/>(Scoping, trust-binding, uncertainty)"]
-    end
-
-    subgraph Endpoints [FastAPI API Routers]
-        R_M1["app.api.ingestion<br/>POST /csv, POST /json"]
-        R_M2["app.api.normalization<br/>POST /process"]
-        R_M3["app.api.terminology<br/>POST /map"]
-        R_M4["app.api.identity<br/>POST /assess"]
-    end
-
-    %% Dependencies
-    Svc_M1 --> Config
-    Svc_M1 --> Errors
-    Svc_M1 --> S_M1
-
-    Svc_M2 --> Config
-    Svc_M2 --> NormConfig
-    Svc_M2 --> Errors
-    Svc_M2 --> S_M1
-    Svc_M2 --> S_M2
-
-    Svc_M3 --> Config
-    Svc_M3 --> TermConfig
-    Svc_M3 --> Errors
-    Svc_M3 --> S_M2
-    Svc_M3 --> S_M3
-
-    Svc_M4 --> Config
-    Svc_M4 --> IdentConfig
-    Svc_M4 --> Errors
-    Svc_M4 --> S_M4
-
-    R_M1 --> Svc_M1
-    R_M2 --> Svc_M2
-    R_M3 --> Svc_M3
-    R_M4 --> Svc_M4
+    TenantNodes -->|Raw Records| M1
+    M1 -->|IngestionResponse| M2
+    M2 -->|NormalizationResponse| M3
+    M3 -->|TerminologyBatchResponse| M5
+    
+    UPID -. Identity Token .-> M4
+    M4 -. Linkage Assessment .-> M5
+    
+    M5 -->|FhirBundleAssemblyResponse| M6
+    M6 -->|Security Release Envelope| M7
+    M7 -->|Delivered Bundle| TenantNodes
+    
+    PatientPortal -->|Grant/Revoke| M6
+    M7 -->|Cryptographic Receipt| AuditLog
+    M6 -->|Security Event| AuditLog
 ```
 
 ---
 
-## 2. Dependency Matrix
+## 2. Module Specifications & Input/Output Contracts
 
-The table below outlines direct code and schema dependencies between components:
+### M1 — Data Ingestion
+- **Input:** Raw CSV / JSON payload (`X-Provider-ID` header, max 1MB stream).
+- **Processing:** Content-length enforcement, dialect detection, character encoding validation, provider allowlist verification.
+- **Output:** `IngestionResponse` containing sanitized records, schema detection metadata, and SHA-256 ingress digest.
 
-| Component | Depends On Core | Consumes Schemas From | Produces Schemas | Downstream Consumers |
-| :--- | :--- | :--- | :--- | :--- |
-| **M1 Ingestion** | `config`, `errors` | None (consumes raw HTTP payloads) | `app.schemas.ingestion.IngestionResponse` | M2 Normalization, External Clients |
-| **M2 Normalization** | `config`, `errors`, `normalization_config` | `app.schemas.ingestion.IngestionResponse` | `app.schemas.normalization.NormalizationResponse` | M3 Terminology, External Clients |
-| **M3 Terminology** | `config`, `errors`, `terminology_config` | `app.schemas.normalization.NormalizationResponse` | `app.schemas.terminology.TerminologyBatchResponse` | M4 Reference Extraction, M5 FHIR Assembly (Planned) |
-| **M4 Identity Safety** | `config`, `errors`, `identity_config` | `app.schemas.identity.IdentityAssessmentBatchRequest` | `app.schemas.identity.IdentityAssessmentResponse` | Cross-Provider Exchange Workflows, M5 Bundling (Planned) |
+### M2 — Data Quality & Normalization
+- **Input:** `IngestionResponse` envelope from M1.
+- **Processing:** Semantic field mapping to `CanonicalLabRecord`, ISO-8601 timestamp parsing, numeric range validation, quality assessment (`valid`, `warning`, `rejected`).
+- **Output:** `NormalizationResponse` with canonical laboratory records and per-record quality metrics.
 
----
+### M3 — Clinical Terminology Mapping
+- **Input:** `NormalizationResponse` envelope from M2.
+- **Processing:** LOINC & SNOMED CT lookup against versioned local registry, specimen and unit constraint checking, measurement property conflict detection (mass vs substance concentration), upstream rejection isolation.
+- **Output:** `TerminologyBatchResponse` with mapped codes, verification status, and ambiguity flags.
 
-## 3. Coupling Guardrails
+### M4 — Patient Identity Safety
+- **Input:** Candidate patient references `(source_provider, local_patient_id)` and optional scoped synthetic trust token.
+- **Processing:** Global provider-scoped registry validation, deterministic uncertainty evaluation without record merging.
+- **Output:** `IdentityAssessmentResponse` (`same_identity`, `different_identity`, `possible_match`, `unresolved`, `review_required`) with confidence score and deterministic reason.
 
-To prevent architectural degradation, TN HealthBridge enforces the following coupling constraints:
+### M5 — FHIR R4 Bundle Assembly
+- **Input:** `TerminologyBatchResponse` from M3.
+- **Processing:** Document bundle construction adhering to FHIR R4, `Composition` as `entry[0]`, LOINC and UCUM coded elements, isolated patient identifiers, closed internal `urn:uuid:` reference topology.
+- **Output:** `FhirBundleAssemblyResponse` containing the valid FHIR R4 Document Bundle JSON.
 
-1. **No Downstream-to-Upstream Coupling:** Upstream modules never import or reference downstream schemas. M1 has zero awareness of M2 canonical formats; M2 has zero awareness of M3 LOINC codes; M3 has zero awareness of M4 identity linkage tokens.
-2. **Contract Preservation:** Intermediate stages communicate strictly via validated Pydantic model envelopes (`IngestionResponse` -> `NormalizationResponse` -> `TerminologyBatchResponse`).
-3. **Registry Independence:**
-   - Terminology mappings are driven by external JSON configuration (`data/terminology/default_registry.json`) loaded at service instantiation.
-   - Synthetic identity registries and linkage fixtures are driven by JSON configuration (`data/identity/synthetic_identity_registry.json` and `synthetic_linkage_fixtures.json`) validated at application startup.
-4. **Isolated Error Domains:** Each module inherits from base domain exceptions (`IngestionException`, `NormalizationException`, `TerminologyException`, `IdentityException`) mapped to specific HTTP status codes in centralized exception handlers.
+### M6 — Consent & Security Gateway
+- **Input:** Assembled FHIR Bundle + ABDM Consent Artefact ID.
+- **Processing:** Evaluation of 6 release gates (active status, temporal validity, HIU/HIP matching, subject matching, date range bounding, purpose code).
+- **Output:** `SecurityReleaseEnvelope` containing permission grant status, cryptographic authorization token, and plain SHA-256 payload digest.
+
+### M7 — Federated Exchange, Transport & Delivery
+- **Input:** `SecurityReleaseEnvelope` + target hospital endpoint.
+- **Processing:** Pre-dispatch revocation verification, idempotency checking, bounded exponential backoff on network failures, delivery to recipient provider inbox.
+- **Output:** `ExchangeJob` with status (`completed`, `failed`, `cancelled`), delivery audit trail, and ECDSA P-256 digital signature receipt.

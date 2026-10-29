@@ -1,0 +1,1030 @@
+[
+  {
+    "job_id": "JOB-EXCH-05a7e45b-2560-4e77-a853-5dfac2161eb8",
+    "idempotency_key": "9951352f-4c06-477d-b059-66a145a12f67",
+    "request_fingerprint": "347a976245e8479b3a2e91d4a1ee036abfb10fadb76937bbcbc5ee2374d237b5",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:24.040751+00:00",
+    "updated_at": "2026-10-28T16:49:24.052893+00:00",
+    "completed_at": "2026-10-28T16:49:24.052893+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:24.045286+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:24.052893+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-0e762212-5eb2-4410-9379-54829e323629",
+    "idempotency_key": "245271bd-0572-4e29-9ead-f570cd2fb86f",
+    "request_fingerprint": "37e1a89ac05a059e51a4e83953e47c0373ae753bdaab3c4fd343270eecd6013d",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:36.063638+00:00",
+    "updated_at": "2026-10-28T16:49:36.075642+00:00",
+    "completed_at": "2026-10-28T16:49:36.075642+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:36.067660+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:36.075642+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-cda200f1-da23-4f57-9524-3543f177a20b",
+    "idempotency_key": "0faa30bf-3f3f-4ddf-b1cf-54af1bd04769",
+    "request_fingerprint": "c33e89c062b72f361510ea4d785f3ce03c5ce42c80a68bfc33536221a8076e4d",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:36.872615+00:00",
+    "updated_at": "2026-10-28T16:49:36.886654+00:00",
+    "completed_at": "2026-10-28T16:49:36.886654+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:36.879629+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:36.886654+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-43748292-f608-493b-bbca-3d9abf79e027",
+    "idempotency_key": "896bad61-4e78-47ab-850e-3fe5b52600b3",
+    "request_fingerprint": "a1b052bc33170365ea12f8d751395159d28731354b23597485d3b6f4fafb70a5",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:37.188589+00:00",
+    "updated_at": "2026-10-28T16:49:37.201172+00:00",
+    "completed_at": "2026-10-28T16:49:37.201172+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:37.194130+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:37.201172+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-1c32e4c4-0cd8-4fa3-bcd7-b336a2fb7592",
+    "idempotency_key": "73f85df7-c35f-4f78-89c4-ac65af6ce5c3",
+    "request_fingerprint": "2b7b24df9df680d005ab7870fe481a8a60ef9f20bd15b9d3d0ffdc840f0d0215",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:37.365508+00:00",
+    "updated_at": "2026-10-28T16:49:37.375164+00:00",
+    "completed_at": "2026-10-28T16:49:37.375164+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:37.369165+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:37.375164+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-6929ad4f-8836-4363-a98d-4243cab700dc",
+    "idempotency_key": "e50b4ba1-0545-495e-bd84-f1d890eb2c86",
+    "request_fingerprint": "3233da3632ccd28704d922468ff57672a4b8ec5a46b88efa9eb1da38a07b6bfc",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:37.550397+00:00",
+    "updated_at": "2026-10-28T16:49:37.560392+00:00",
+    "completed_at": "2026-10-28T16:49:37.560392+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:37.553819+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:37.560392+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-9b95d8cf-c212-4112-a6fa-a71dd3d2537f",
+    "idempotency_key": "0cfe2e6b-e55c-44c2-94fc-493be138055d",
+    "request_fingerprint": "953173bf2aac4fd414af275322a6287a35e4f8f77c76343975b1e3622c91b26b",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:49:37.765786+00:00",
+    "updated_at": "2026-10-28T16:49:37.781521+00:00",
+    "completed_at": "2026-10-28T16:49:37.781521+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:49:37.773494+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:49:37.780491+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-9493d9be-bc82-407a-89b1-151f7079ee7c",
+    "idempotency_key": "7b9558ca-437c-4b9f-b129-d350f1f181dd",
+    "request_fingerprint": "73d6f02246c79f7276d88695d391982d2ba02d3da1a5a93316d9691c0dfaa308",
+    "caller_organization_id": "HOSPITAL_A",
+    "source_provider_id": "HOSPITAL_A",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A991FC",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:50:10.902026+00:00",
+    "updated_at": "2026-10-28T16:50:10.915040+00:00",
+    "completed_at": "2026-10-28T16:50:10.915040+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:50:10.908040+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:50:10.915040+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-325ef6e0-a304-4fe7-8945-48a784958817",
+    "idempotency_key": "38eaceb4-b045-4e04-b49d-4b929a5b186b",
+    "request_fingerprint": "65ff0076da9cf4a5cf02d83b9d924086f4ca069feb137713cf8f8b559d3ac96c",
+    "caller_organization_id": "HOSPITAL_A",
+    "source_provider_id": "HOSPITAL_A",
+    "recipient_hiu_id": "LAB_C",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-245E44",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": "Patient identity in consent artefact does not match bundle subject.",
+    "created_at": "2026-10-28T16:50:27.418615+00:00",
+    "updated_at": "2026-10-28T16:50:27.432582+00:00",
+    "completed_at": "2026-10-28T16:50:27.432582+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:50:27.423592+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:50:27.432582+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-101f0a0f-e1fa-430e-8d1d-824a52a689f3",
+    "idempotency_key": "7a7060a8-38d4-43bc-a60d-c40807801278",
+    "request_fingerprint": "2341a1fb5116f5a299eb52feaa0da3ee2ac18ddb9b65559ff180de702bf6da53",
+    "caller_organization_id": "LAB_C",
+    "source_provider_id": "LAB_C",
+    "recipient_hiu_id": "CLINIC_F",
+    "patient_reference": "1234",
+    "status": "FAILED_PERMANENTLY",
+    "attempt_count": 1,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-3A9EF6",
+    "delivery_id": "DELIV-d142148e-2791-4a31-8589-c06864f00a23",
+    "receipt": null,
+    "error_message": "Permanent receiver failure: Receiver 'CLINIC_F' is not a registered healthcare recipient in the simulated network.",
+    "created_at": "2026-10-28T16:53:20.913107+00:00",
+    "updated_at": "2026-10-28T16:53:20.960344+00:00",
+    "completed_at": "2026-10-28T16:53:20.960344+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:53:20.923301+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:20.940312+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "AUTHORIZED",
+        "reason": "All 6 M6 security gates passed successfully"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:20.945275+00:00",
+        "from_status": "AUTHORIZED",
+        "to_status": "QUEUED",
+        "reason": "Enqueued for simulated hospital dispatch"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:20.954351+00:00",
+        "from_status": "QUEUED",
+        "to_status": "DELIVERING",
+        "reason": "Executing delivery attempt 1"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:20.960344+00:00",
+        "from_status": "DELIVERING",
+        "to_status": "FAILED_PERMANENTLY",
+        "reason": "Permanent receiver failure: Receiver 'CLINIC_F' is not a registered healthcare recipient in the simulated network."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-6fa19a0e-c055-480e-8a0a-22cb95ad65dc",
+    "idempotency_key": "4db27517-8c9f-49ac-a96a-72cd61eb928c",
+    "request_fingerprint": "65f06cf425c15066d8d3a550572de38ee438565b94caf04b25bd4c20b02465b6",
+    "caller_organization_id": "LAB_C",
+    "source_provider_id": "LAB_C",
+    "recipient_hiu_id": "HOSPITAL_A",
+    "patient_reference": "1234",
+    "status": "DELIVERED",
+    "attempt_count": 1,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A94DBA",
+    "delivery_id": "DELIV-12710191-de9f-4745-a7f7-a5967bea23b3",
+    "receipt": {
+      "receipt_id": "RCPT-SIM-5b7cda3b-387d-4661-b8c6-0d21f703240c",
+      "delivery_id": "DELIV-12710191-de9f-4745-a7f7-a5967bea23b3",
+      "recipient_id": "HOSPITAL_A",
+      "status": "accepted",
+      "acknowledged_at": "2026-10-28T16:53:51.241675+00:00",
+      "payload_digest": "6f05ebfaa038720a07e47b9afdfa998487a7b198d903db4c76f42a65ea8b34ee",
+      "message": "Simulated hospital HOSPITAL_A successfully accepted clinical document bundle."
+    },
+    "error_message": null,
+    "created_at": "2026-10-28T16:53:51.214709+00:00",
+    "updated_at": "2026-10-28T16:53:51.243711+00:00",
+    "completed_at": "2026-10-28T16:53:51.243711+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:53:51.216712+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:51.227151+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "AUTHORIZED",
+        "reason": "All 6 M6 security gates passed successfully"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:51.229476+00:00",
+        "from_status": "AUTHORIZED",
+        "to_status": "QUEUED",
+        "reason": "Enqueued for simulated hospital dispatch"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:51.235210+00:00",
+        "from_status": "QUEUED",
+        "to_status": "DELIVERING",
+        "reason": "Executing delivery attempt 1"
+      },
+      {
+        "timestamp": "2026-10-28T16:53:51.243711+00:00",
+        "from_status": "DELIVERING",
+        "to_status": "DELIVERED",
+        "reason": "Delivered to HOSPITAL_A"
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-4e603feb-8472-4ea3-8529-4e4efed61bdc",
+    "idempotency_key": "c7a0020f-61af-4fbe-8a5a-39f19a639022",
+    "request_fingerprint": "173faade2a4bacfdcd1c12686172b297ce0d14f3db430a3beb1f47f1cfe8f379",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "BLOCKED",
+    "attempt_count": 0,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": null,
+    "receipt": null,
+    "error_message": null,
+    "created_at": "2026-10-28T16:58:34.608197+00:00",
+    "updated_at": "2026-10-28T16:58:34.612199+00:00",
+    "completed_at": "2026-10-28T16:58:34.612199+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T16:58:34.609197+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T16:58:34.612199+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "BLOCKED",
+        "reason": "M6 Consent/Release Gate check failed: Patient identity in consent artefact does not match bundle subject."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-f661491c-eaa3-490e-9364-3dee2ca2b257",
+    "idempotency_key": "cd941301-e2f1-4461-8b72-d7f2967cef78",
+    "request_fingerprint": "5855bbbe53261fe3220b716377f36c29d8ea49c5f837ba64690488f8dc7521c8",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "FAILED_PERMANENTLY",
+    "attempt_count": 1,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": "DELIV-d5e9c08b-93e1-4f5e-a88b-6a2ad5fcd267",
+    "receipt": null,
+    "error_message": null,
+    "created_at": "2026-10-28T17:00:28.588318+00:00",
+    "updated_at": "2026-10-28T17:00:28.597215+00:00",
+    "completed_at": "2026-10-28T17:00:28.597215+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T17:00:28.590134+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T17:00:28.592220+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "AUTHORIZED",
+        "reason": "All 6 M6 security gates passed successfully"
+      },
+      {
+        "timestamp": "2026-10-28T17:00:28.593236+00:00",
+        "from_status": "AUTHORIZED",
+        "to_status": "QUEUED",
+        "reason": "Enqueued for simulated hospital dispatch"
+      },
+      {
+        "timestamp": "2026-10-28T17:00:28.595173+00:00",
+        "from_status": "QUEUED",
+        "to_status": "DELIVERING",
+        "reason": "Executing delivery attempt 1"
+      },
+      {
+        "timestamp": "2026-10-28T17:00:28.597215+00:00",
+        "from_status": "DELIVERING",
+        "to_status": "FAILED_PERMANENTLY",
+        "reason": "Permanent receiver failure: Receiver 'HOSPITAL_D' is not a registered healthcare recipient in the simulated network."
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-17ba69d0-eeaf-4b7c-be5b-5bcca751d0db",
+    "idempotency_key": "422be029-039d-4bf3-b22b-2574e6621247",
+    "request_fingerprint": "c045ca51918859038694db70db1174aebe3295a2ba773f826414939e8a19425b",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "DELIVERED",
+    "attempt_count": 1,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": "DELIV-fc93bf8c-eef3-4522-ba55-e1a1f6f2b58b",
+    "receipt": {
+      "receipt_id": "RCPT-SIM-efd875b7-cc8e-4622-9680-7d7a2ba4655b",
+      "delivery_id": "DELIV-fc93bf8c-eef3-4522-ba55-e1a1f6f2b58b",
+      "recipient_id": "HOSPITAL_D",
+      "status": "accepted",
+      "acknowledged_at": "2026-10-28T17:01:42.858268+00:00",
+      "payload_digest": "797a19f4ad847a7b3748cf4d24fcd7c8df1bed0455126ba8da8c97bb8806af8d",
+      "message": "Simulated hospital HOSPITAL_D successfully accepted clinical document bundle."
+    },
+    "error_message": null,
+    "created_at": "2026-10-28T17:01:42.849156+00:00",
+    "updated_at": "2026-10-28T17:01:42.859287+00:00",
+    "completed_at": "2026-10-28T17:01:42.859287+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T17:01:42.850205+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T17:01:42.853371+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "AUTHORIZED",
+        "reason": "All 6 M6 security gates passed successfully"
+      },
+      {
+        "timestamp": "2026-10-28T17:01:42.855277+00:00",
+        "from_status": "AUTHORIZED",
+        "to_status": "QUEUED",
+        "reason": "Enqueued for simulated hospital dispatch"
+      },
+      {
+        "timestamp": "2026-10-28T17:01:42.857254+00:00",
+        "from_status": "QUEUED",
+        "to_status": "DELIVERING",
+        "reason": "Executing delivery attempt 1"
+      },
+      {
+        "timestamp": "2026-10-28T17:01:42.858268+00:00",
+        "from_status": "DELIVERING",
+        "to_status": "DELIVERED",
+        "reason": "Delivered to HOSPITAL_D"
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-ec6323b3-027c-4df2-8c04-18ef0a76753c",
+    "idempotency_key": "5975f6b5-24ff-4c85-8f2b-fa2e078106aa",
+    "request_fingerprint": "8b207f6edaca6943f0a8310e7a7a61ec84f719650ca64e161ecf11fb1a82e5d1",
+    "caller_organization_id": "LAB_E",
+    "source_provider_id": "LAB_E",
+    "recipient_hiu_id": "HOSPITAL_D",
+    "patient_reference": "LOCAL-UPID-F7908E72",
+    "status": "DELIVERED",
+    "attempt_count": 1,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-A3D640",
+    "delivery_id": "DELIV-beb25ea8-fc2c-44ca-9906-77c8958fb8fd",
+    "receipt": {
+      "receipt_id": "RCPT-SIM-5c18bef2-f05d-4ded-a0d9-4803f402d20a",
+      "delivery_id": "DELIV-beb25ea8-fc2c-44ca-9906-77c8958fb8fd",
+      "recipient_id": "HOSPITAL_D",
+      "status": "accepted",
+      "acknowledged_at": "2026-10-28T17:04:21.121477+00:00",
+      "payload_digest": "d1d2bdde861f01af1c2a6688bd6e743c1fda0a1abd54cd2d4a597866dd75eab0",
+      "message": "Simulated hospital HOSPITAL_D successfully accepted clinical document bundle."
+    },
+    "error_message": null,
+    "created_at": "2026-10-28T17:04:21.083945+00:00",
+    "updated_at": "2026-10-28T17:04:21.123504+00:00",
+    "completed_at": "2026-10-28T17:04:21.123504+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-28T17:04:21.089952+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-28T17:04:21.105510+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "AUTHORIZED",
+        "reason": "All 6 M6 security gates passed successfully"
+      },
+      {
+        "timestamp": "2026-10-28T17:04:21.111503+00:00",
+        "from_status": "AUTHORIZED",
+        "to_status": "QUEUED",
+        "reason": "Enqueued for simulated hospital dispatch"
+      },
+      {
+        "timestamp": "2026-10-28T17:04:21.116546+00:00",
+        "from_status": "QUEUED",
+        "to_status": "DELIVERING",
+        "reason": "Executing delivery attempt 1"
+      },
+      {
+        "timestamp": "2026-10-28T17:04:21.123504+00:00",
+        "from_status": "DELIVERING",
+        "to_status": "DELIVERED",
+        "reason": "Delivered to HOSPITAL_D"
+      }
+    ],
+    "module_results": null,
+    "delivered_records": [],
+    "fhir_bundle": null
+  },
+  {
+    "job_id": "JOB-EXCH-13fff885-7de8-432f-b76f-900755ca4d0f",
+    "idempotency_key": "26b17a2d-0909-49b8-835b-730816e15189",
+    "request_fingerprint": "9bfa671d5748a124cfc4da90b6a6a3ab18875ac3b980052a9fdb17295fccb0b9",
+    "caller_organization_id": "CLINIC_F",
+    "source_provider_id": "CLINIC_F",
+    "recipient_hiu_id": "LAB_C",
+    "patient_reference": "GVC 9082",
+    "status": "DELIVERED",
+    "attempt_count": 1,
+    "max_retries": 3,
+    "consent_id": "CONSENT-REQ-1B1E1F",
+    "delivery_id": "DELIV-54b5dafc-77c4-4514-9e00-35843d38ae2b",
+    "receipt": {
+      "receipt_id": "RCPT-SIM-8806b094-b08e-4e19-9693-f0e41689d0bf",
+      "delivery_id": "DELIV-54b5dafc-77c4-4514-9e00-35843d38ae2b",
+      "recipient_id": "LAB_C",
+      "status": "accepted",
+      "acknowledged_at": "2026-10-29T06:38:52.044249+00:00",
+      "payload_digest": "4e38ccd516bbf2418f17ab41be4aca8fbb32edeb1d7e4921cf399dc0f941916d",
+      "message": "Simulated hospital LAB_C successfully accepted clinical document bundle."
+    },
+    "error_message": null,
+    "created_at": "2026-10-29T06:38:51.991647+00:00",
+    "updated_at": "2026-10-29T06:38:52.046249+00:00",
+    "completed_at": "2026-10-29T06:38:52.046249+00:00",
+    "history": [
+      {
+        "timestamp": "2026-10-29T06:38:52.000225+00:00",
+        "from_status": "RECEIVED",
+        "to_status": "VALIDATING",
+        "reason": "Validating source provider, recipient, and payload"
+      },
+      {
+        "timestamp": "2026-10-29T06:38:52.013999+00:00",
+        "from_status": "VALIDATING",
+        "to_status": "AUTHORIZED",
+        "reason": "All 6 M6 security gates passed successfully"
+      },
+      {
+        "timestamp": "2026-10-29T06:38:52.024143+00:00",
+        "from_status": "AUTHORIZED",
+        "to_status": "QUEUED",
+        "reason": "Enqueued for simulated hospital dispatch"
+      },
+      {
+        "timestamp": "2026-10-29T06:38:52.033172+00:00",
+        "from_status": "QUEUED",
+        "to_status": "DELIVERING",
+        "reason": "Executing delivery attempt 1"
+      },
+      {
+        "timestamp": "2026-10-29T06:38:52.046249+00:00",
+        "from_status": "DELIVERING",
+        "to_status": "DELIVERED",
+        "reason": "Delivered to LAB_C"
+      }
+    ],
+    "module_results": {
+      "overall_score": 98.5,
+      "overall_grade": "A+",
+      "m1_ingestion": {
+        "name": "M1 Data Ingestion & Extraction",
+        "status": "SUCCESS",
+        "score": 100.0,
+        "ingestion_id": "ING-2A5E0C00",
+        "records_ingested": 1,
+        "source_format": "Provider Adapter EHR / JSON",
+        "extracted_fields": [
+          "patient_reference",
+          "test_name",
+          "value",
+          "unit",
+          "specimen",
+          "observed_at"
+        ],
+        "details": "Successfully ingested 1 clinical records from CLINIC_F adapter."
+      },
+      "m2_normalization": {
+        "name": "M2 Canonical Normalization",
+        "status": "VALID",
+        "score": 100.0,
+        "cleanliness_rate": "100%",
+        "specimen_normalized": true,
+        "units_standardized": true,
+        "quality_issues_count": 0,
+        "details": "All 1 observations normalized to canonical schema without quality degradation."
+      },
+      "m3_terminology": {
+        "name": "M3 Clinical Terminology Mapping",
+        "status": "TEXT_PRESERVED",
+        "score": 90.0,
+        "mapped_count": 0,
+        "unmapped_count": 1,
+        "ambiguous_count": 0,
+        "registry_version": "1.0.0",
+        "loinc_codes": [],
+        "details": "0/1 observations matched to standard LOINC concepts."
+      },
+      "m4_identity_safety": {
+        "name": "M4 Patient Identity Safety",
+        "status": "VERIFIED",
+        "score": 100.0,
+        "universal_patient_id": "UPID-45675A24",
+        "source_local_id": "GVC 9082",
+        "target_local_id": "LOCAL-UPID-45675A24",
+        "linkage_confidence": "100%",
+        "collision_check": "PASSED (No demographic collision detected)",
+        "details": "Deterministic identity binding verified for UPID-45675A24 across CLINIC_F and LAB_C."
+      },
+      "m5_fhir_assembly": {
+        "name": "M5 FHIR R4 Document Assembly",
+        "status": "ASSEMBLED",
+        "score": 100.0,
+        "bundle_type": "document",
+        "topology": "Composition (entry[0]) -> DiagnosticReport -> Observation",
+        "total_entries": 6,
+        "reference_integrity": "100% (urn:uuid verified closed internal references)",
+        "details": "Generated authentic FHIR R4 Document Bundle with 6 resources."
+      },
+      "m6_security_gateway": {
+        "name": "M6 ABDM Consent & Security Gateway",
+        "status": "AUTHORIZED",
+        "score": 100.0,
+        "consent_id": "CONSENT-REQ-1B1E1F",
+        "gates_evaluated": 6,
+        "gates_passed": 6,
+        "gate_breakdown": {
+          "gate_1_status": "GRANTED",
+          "gate_2_temporal": "ACTIVE & UNEXPIRED",
+          "gate_3_subject": "MATCHED (UPID-45675A24)",
+          "gate_4_hiu": "AUTHORIZED (LAB_C)",
+          "gate_5_hip": "AUTHORIZED (CLINIC_F)",
+          "gate_6_integrity": "CRYPTOGRAPHICALLY_VERIFIED"
+        },
+        "details": "All 6 M6 security gates cleared for consent CONSENT-REQ-1B1E1F."
+      },
+      "m7_exchange_delivery": {
+        "name": "M7 Reliable Exchange & Delivery",
+        "status": "DELIVERED",
+        "score": 100.0,
+        "recipient_id": "LAB_C",
+        "receipt_id": "RCPT-SIM-8806b094-b08e-4e19-9693-f0e41689d0bf",
+        "payload_digest": "4e38ccd516bbf2418f17ab41be4aca8fbb32edeb1d7e4921cf399dc0f941916d",
+        "delivery_acknowledged_at": "2026-10-29T06:38:52.044249+00:00",
+        "attempts": 1,
+        "details": "Secure delivery confirmed by simulated receiver LAB_C."
+      }
+    },
+    "delivered_records": [
+      {
+        "record_id": "REC-CLINIC_F-AUTO",
+        "test_name": "Blood Glucose Fasting",
+        "value": "105.0",
+        "unit": "mg/dL",
+        "specimen": "blood",
+        "reference_range": "70 - 100 mg/dL",
+        "interpretation": "Elevated",
+        "category": "LABORATORY",
+        "effective_datetime": "2026-10-29T06:38:51.983124+00:00",
+        "attending_practitioner": "Attending Staff",
+        "notes": "Automated clinical observation"
+      }
+    ],
+    "fhir_bundle": {
+      "resourceType": "Bundle",
+      "id": "a7669f94-8cd3-4b42-b637-5022fcde15aa",
+      "meta": null,
+      "identifier": {
+        "system": "https://healthbridge.tn.gov.in/bundle",
+        "value": "a7669f94-8cd3-4b42-b637-5022fcde15aa"
+      },
+      "type": "document",
+      "timestamp": "2026-10-29T06:38:51.986163+00:00",
+      "entry": [
+        {
+          "fullUrl": "urn:uuid:491fa7d5-6167-4103-919f-dfe0902cd335",
+          "resource": {
+            "resourceType": "Composition",
+            "id": "491fa7d5-6167-4103-919f-dfe0902cd335",
+            "meta": null,
+            "status": "preliminary",
+            "type": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11502-2",
+                  "display": "Laboratory report"
+                }
+              ],
+              "text": "Laboratory report"
+            },
+            "category": null,
+            "subject": {
+              "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+              "display": "Patient"
+            },
+            "date": "2026-10-29T06:38:51.986163+00:00",
+            "author": [
+              {
+                "reference": "urn:uuid:3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+                "display": "CLINIC_F"
+              }
+            ],
+            "title": "Laboratory Diagnostic Report",
+            "section": [
+              {
+                "title": "Diagnostic Report",
+                "code": null,
+                "entry": [
+                  {
+                    "reference": "urn:uuid:5a538a1e-ee83-4ae8-b65e-6b01379f1d65",
+                    "display": null
+                  }
+                ]
+              }
+            ],
+            "attester": null
+          }
+        },
+        {
+          "fullUrl": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+          "resource": {
+            "resourceType": "Patient",
+            "id": "858877fa-f515-4e3a-aa24-e68c77df5a89",
+            "meta": null,
+            "identifier": [
+              {
+                "system": "https://healthbridge.tn.gov.in/providers/CLINIC_F/patient",
+                "value": "GVC 9082"
+              },
+              {
+                "system": "https://healthbridge.tn.gov.in/identity/universal",
+                "value": "UPID-45675A24"
+              }
+            ],
+            "active": true
+          }
+        },
+        {
+          "fullUrl": "urn:uuid:3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+          "resource": {
+            "resourceType": "Organization",
+            "id": "3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+            "meta": null,
+            "identifier": [
+              {
+                "system": "https://healthbridge.tn.gov.in/providers",
+                "value": "CLINIC_F"
+              }
+            ],
+            "name": "CLINIC_F"
+          }
+        },
+        {
+          "fullUrl": "urn:uuid:527e93ac-e3da-4e9d-841a-92d6496d346b",
+          "resource": {
+            "resourceType": "Specimen",
+            "id": "527e93ac-e3da-4e9d-841a-92d6496d346b",
+            "meta": null,
+            "type": {
+              "text": "blood",
+              "coding": null
+            },
+            "subject": {
+              "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+              "display": null
+            },
+            "collection": null
+          }
+        },
+        {
+          "fullUrl": "urn:uuid:5a538a1e-ee83-4ae8-b65e-6b01379f1d65",
+          "resource": {
+            "resourceType": "DiagnosticReport",
+            "id": "5a538a1e-ee83-4ae8-b65e-6b01379f1d65",
+            "meta": null,
+            "status": "preliminary",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                    "code": "LAB",
+                    "display": "Laboratory"
+                  }
+                ],
+                "text": null
+              }
+            ],
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "11502-2",
+                  "display": "Laboratory report"
+                }
+              ],
+              "text": "Laboratory Diagnostic Report"
+            },
+            "subject": {
+              "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+              "display": null
+            },
+            "issued": "2026-10-29T06:38:51.986163+00:00",
+            "performer": [
+              {
+                "reference": "urn:uuid:3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+                "display": null
+              }
+            ],
+            "specimen": [
+              {
+                "reference": "urn:uuid:527e93ac-e3da-4e9d-841a-92d6496d346b",
+                "display": null
+              }
+            ],
+            "result": [
+              {
+                "reference": "urn:uuid:c8ef90be-ec52-4798-8cd9-f07a976f6fa5",
+                "display": null
+              }
+            ]
+          }
+        },
+        {
+          "fullUrl": "urn:uuid:c8ef90be-ec52-4798-8cd9-f07a976f6fa5",
+          "resource": {
+            "resourceType": "Observation",
+            "id": "c8ef90be-ec52-4798-8cd9-f07a976f6fa5",
+            "meta": null,
+            "status": "preliminary",
+            "category": [
+              {
+                "coding": [
+                  {
+                    "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                    "code": "laboratory",
+                    "display": "Laboratory"
+                  }
+                ],
+                "text": null
+              }
+            ],
+            "code": {
+              "coding": null,
+              "text": "Blood Glucose Fasting"
+            },
+            "subject": {
+              "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+              "display": null
+            },
+            "effectiveDateTime": "2026-10-29T06:38:51.983124+00:00",
+            "valueQuantity": {
+              "value": 105.0,
+              "unit": "mg/dL",
+              "system": "http://unitsofmeasure.org",
+              "code": "mg/dL"
+            },
+            "valueString": null,
+            "note": [
+              {
+                "text": "Clinical terminology unmapped (reason: NO_MAPPING_FOUND). Preserved with source investigation name."
+              }
+            ],
+            "specimen": {
+              "reference": "urn:uuid:527e93ac-e3da-4e9d-841a-92d6496d346b",
+              "display": null
+            }
+          }
+        }
+      ]
+    }
+  }
+]

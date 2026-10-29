@@ -1,260 +1,127 @@
-# TN HealthBridge — API Reference Manual
+# TN HealthBridge API Reference (M1–M7 & Federated System)
 
-## 1. Overview & Interactive OpenAPI Documentation
-
-TN HealthBridge exposes a RESTful HTTP API built with FastAPI. All endpoints reside under the `/api/v1` prefix (except the `/health` endpoint).
-
-### Interactive Swagger & OpenAPI Schema
-When the application is running, authoritative interactive documentation is automatically served at:
-- **Swagger UI:** `http://127.0.0.1:8000/docs`
-- **ReDoc UI:** `http://127.0.0.1:8000/redoc`
-- **OpenAPI JSON Schema:** `http://127.0.0.1:8000/openapi.json`
+Complete reference documentation for all implemented endpoints, authentication models, RBAC permissions, and domain error responses.
 
 ---
 
-## 2. Global Conventions
+## 1. Authentication & RBAC
 
-- **Content Types:** All endpoints accept and return `application/json`, except `POST /api/v1/ingestion/csv` which accepts `multipart/form-data`.
-- **Stateless Operation:** Requests are processed purely in-memory; no central clinical database is created or modified.
-- **Privacy Safe Errors:** Validation errors (HTTP 422) and domain errors (HTTP 400, 413, 415) return sanitized messages that never echo raw clinical values or unredacted patient identifiers.
+Protected endpoints accept standard RFC 7519 HS256 JWT access tokens in the `Authorization` header:
+```http
+Authorization: Bearer <access_token>
+```
 
----
-
-## 3. Endpoints
-
-### 3.1 Service Health Check
-
-`GET /health`
-
-- **Purpose:** Verifies that the service is running and identifies active modules without exposing sensitive internal state.
-- **Request Parameters:** None.
-- **Response Model:** JSON object (`status: "healthy"`).
-- **Representative Response:**
-  ```json
-  {
-    "status": "healthy",
-    "service": "TN HealthBridge",
-    "module": "M1_DATA_INGESTION",
-    "modules": [
-      "M1_DATA_INGESTION",
-      "M2_DATA_NORMALIZATION",
-      "M3_CLINICAL_TERMINOLOGY_MAPPING",
-      "M4_PATIENT_IDENTITY_SAFETY"
-    ]
-  }
-  ```
+### Pre-Configured Test Credentials
+| Account Username | Organization | Role Assignment | Scope |
+| :--- | :--- | :--- | :--- |
+| `admin` | `TN_HEALTH_DEPT` | `SYSTEM_ADMIN` | Global administrative operations, organization management |
+| `hospital_a_operator` | `HOSPITAL_A` | `HOSPITAL_OPERATOR`, `DATA_PROVIDER` | Local ingestion, records entry, provider adapter |
+| `hospital_b_requester`| `HOSPITAL_B` | `DATA_REQUESTER`, `HOSPITAL_OPERATOR` | Federated data requests, destination inbox |
+| `lab_c_provider` | `LAB_C` | `DATA_PROVIDER` | Diagnostic laboratory records entry |
+| `hospital_d_operator` | `HOSPITAL_D` | `HOSPITAL_OPERATOR` | Sunrise Hospital node operations |
+| `lab_e_operator` | `LAB_E` | `DATA_PROVIDER` | Elite Diagnostics node operations |
+| `clinic_f_operator` | `CLINIC_F` | `HOSPITAL_OPERATOR` | Green Valley Clinic node operations |
+| `arun_patient` | `PATIENT` | `PATIENT` | Patient portal, consent grant/deny/revoke |
+| `auditor_user` | `TN_AUDIT_COMMISSION`| `AUDITOR` | Compliance audit querying |
 
 ---
 
-### 3.2 Ingest CSV Clinical Records
+## 2. API Endpoints Catalog
 
-`POST /api/v1/ingestion/csv`
+### Authentication
+- `POST /api/v1/auth/token`: Submit username and password to obtain a signed access token.
 
-- **Purpose:** Ingests tabular CSV clinical records from an uploaded file, validates column count and unique headers, attaches provenance metadata, and outputs standardized records.
-- **Content-Type:** `multipart/form-data`
-- **Parameters:**
-  - `file` (*required, file upload*): Valid `.csv` file.
-  - `X-Provider-ID` (*optional header*): Source healthcare provider (e.g. `HOSPITAL_A`).
-  - `provider_id` (*optional form field*): Alternative provider ID form field.
-- **Validation & Limits:**
-  - Max file upload size: 1 MB (`MAX_UPLOAD_SIZE_BYTES = 1,048,576`).
-  - Strict CSV quote checking; duplicate header columns rejected.
-  - Conflicting header vs form provider IDs rejected with `400 Bad Request`.
-- **Response Model:** `IngestionResponse`
-- **Representative Response:**
-  ```json
-  {
-    "ingestion_id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-    "source_provider_id": "HOSPITAL_A",
-    "source_format": "csv",
-    "ingested_at": "2026-10-27T10:00:00Z",
-    "record_count": 2,
-    "records": [
-      {
-        "record_index": 0,
-        "source_data": {
-          "patient_id": "SYN_PATIENT_001",
-          "test_name": "Fasting Blood Glucose",
-          "result": "110",
-          "unit": "mg/dL",
-          "timestamp": "2026-03-29"
-        }
-      }
-    ]
-  }
-  ```
+### M1 — Data Ingestion
+- `POST /api/v1/ingestion/csv`: Upload raw hospital CSV files (`Content-Type: multipart/form-data`) with `X-Provider-ID` header.
+- `POST /api/v1/ingestion/json`: Post raw hospital JSON records batch.
 
----
+### M2 — Data Quality & Normalization
+- `POST /api/v1/normalization/process`: Ingest an M1 `IngestionResponse` envelope; maps source fields to `CanonicalLabRecord` and evaluates record quality (`valid`, `warning`, `rejected`).
 
-### 3.3 Ingest JSON Clinical Records
+### M3 — Clinical Terminology Mapping
+- `POST /api/v1/terminology/map`: Maps normalized records to standard LOINC concepts using local terminology registry; isolates ambiguities and context conflicts.
 
-`POST /api/v1/ingestion/json`
+### M4 — Patient Identity Safety
+- `POST /api/v1/identity/assess`: Evaluates candidate patient pairs for potential linkage using controlled synthetic trust fixtures; outputs `same_identity`, `different_identity`, `possible_match`, `unresolved`, or `review_required`.
 
-- **Purpose:** Ingests structured JSON clinical records, validates payload structure and provider ID, bounds stream memory, and wraps records in an ingestion envelope.
-- **Content-Type:** `application/json`
-- **Parameters:**
-  - `X-Provider-ID` (*optional header*): Source healthcare provider (e.g. `HOSPITAL_B`).
-  - Request Body (*required*): `JsonIngestionRequest` containing `source_provider_id` (optional if header present) and `records` array.
-- **Batch Limits:** 1 to 1,000 records (`MAX_RECORD_COUNT`).
-- **Representative Request:**
-  ```json
-  {
-    "source_provider_id": "HOSPITAL_B",
-    "records": [
-      {
-        "patient_reference": "SYN_PATIENT_002",
-        "investigation": "Hemoglobin A1c",
-        "value": 5.8,
-        "unit": "%",
-        "timestamp": "2026-03-29T11:00:00Z"
-      }
-    ]
-  }
-  ```
-- **Response Model:** `IngestionResponse`
+### M5 — FHIR R4 Bundle Assembly
+- `POST /api/v1/fhir/bundle`: Assembles an uncertainty-aware FHIR R4 Document Bundle from an M3 terminology batch. Enforces Composition-as-entry[0] topology, LOINC/UCUM encoding, and closed `urn:uuid:` references.
 
----
+### M6 — Consent & Security Gateway
+- `POST /api/v1/gateway/release`: Evaluates ABDM consent artefact against assembled FHIR bundle; enforces 6 security gates and returns signed release envelope with plain SHA-256 integrity digest.
+- `POST /api/v1/gateway/consent`: Registers a new consent artefact in the authoritative store.
+- `GET /api/v1/gateway/consent/{consent_id}`: Retrieves consent state and full lifecycle history.
+- `POST /api/v1/gateway/consent/{consent_id}/grant`: Grants an active consent artefact.
+- `POST /api/v1/gateway/consent/{consent_id}/revoke`: Immediately revokes consent (fail-closed).
 
-### 3.4 Normalize Ingested Records
+### M7 & Federated Exchange
+- `POST /api/v1/exchange/send`: Executes reliable, idempotent exchange to simulated receiving hospital with pre-dispatch revocation check and bounded retries.
+- `GET /api/v1/exchange/jobs/{job_id}`: Polls exchange job status and transition history.
+- `POST /api/v1/exchange/jobs/{job_id}/cancel`: Manually cancels an active exchange job.
+- `POST /api/v1/exchange/receiver/simulate`: Direct simulated hospital receiver endpoint.
+- `GET /api/v1/exchange/transfers`: Paginated list of transfer jobs with date, source, destination, status, and search filters.
+- `POST /api/v1/exchange/federated-exchange`: End-to-end multi-module federated transfer orchestrating Source Adapter -> M1 Ingestion -> M2 Normalization -> M3 Terminology -> M4 Linkage -> M5 FHIR Assembly -> M6 Consent Gate -> M7 Transport -> Destination Inbox.
+- `GET /api/v1/exchange/transfers/{job_id}/download-receipt`: Downloads the ECDSA P-256 signed cryptographic transfer receipt.
 
-`POST /api/v1/normalization/process`
+### Organization & Access Management
+- `GET /api/v1/organizations`: Retrieves all registered healthcare organizations.
+- `POST /api/v1/organizations`: Registers a new healthcare organization (Admin only).
+- `GET /api/v1/organizations/{org_id}`: Gets detailed organization metadata.
+- `PUT /api/v1/organizations/{org_id}`: Updates organization details.
+- `POST /api/v1/organizations/{org_id}/toggle-status`: Toggles facility active/suspended state.
+- `GET /api/v1/organizations/{org_id}/users`: Lists authorized users belonging to an organization.
+- `POST /api/v1/organizations/{org_id}/users`: Adds an authorized user to an organization.
 
-- **Purpose:** Maps source-specific keys into the canonical laboratory schema (`CanonicalLabRecord`), normalizes types and ISO-8601 datetimes, preserves unmapped attributes, and assigns tri-state quality scoring (`valid`, `warning`, `rejected`).
-- **Content-Type:** `application/json`
-- **Request Model:** `IngestionResponse` envelope from M1.
-- **Response Model:** `NormalizationResponse`
-- **Representative Response:**
-  ```json
-  {
-    "batch_id": "7b2c01e8-7821-4f10-b99d-83f6fa38b25a",
-    "ingestion_id": "9b1deb4d-3b7d-4bad-9bdd-2b0d7b3dcb6d",
-    "source_provider_id": "HOSPITAL_B",
-    "source_format": "json",
-    "total_records": 1,
-    "valid_records": 1,
-    "warning_records": 0,
-    "rejected_records": 0,
-    "records": [
-      {
-        "record_index": 0,
-        "canonical": {
-          "patient_reference": "SYN_PATIENT_002",
-          "test_name": "Hemoglobin A1c",
-          "result": 5.8,
-          "unit": "%",
-          "observed_at": "2026-03-29T11:00:00Z",
-          "specimen": null
-        },
-        "source_data": { ... },
-        "unmapped_fields": {},
-        "quality_status": "valid",
-        "issues": []
-      }
-    ]
-  }
-  ```
+### Universal Patient Identity (UPID)
+- `GET /api/v1/identity/patients`: Lists registered universal patient profiles with optional search and provider filters.
+- `POST /api/v1/identity/patients`: Creates a new Universal Patient Identity profile (Admin only).
+- `GET /api/v1/identity/patients/{universal_patient_id}`: Gets UPID profile and all mapped provider local IDs.
+- `POST /api/v1/identity/mappings`: Maps a provider local patient ID and scoped token to a UPID.
+- `POST /api/v1/identity/resolve`: Resolves a patient identity across two provider nodes using UPID or M4 engine.
+
+### Federated Provider Applications (6 Nodes)
+- `GET /api/v1/providers/{provider_id}/patients`: Lists local registered patients at the given provider node.
+- `POST /api/v1/providers/{provider_id}/patients`: Registers a new local patient at the provider node.
+- `GET /api/v1/providers/{provider_id}/records`: Lists local clinical observations, optionally filtered by `local_patient_id`.
+- `POST /api/v1/providers/{provider_id}/records`: Adds a new clinical observation record to the provider's local repository.
+- `POST /api/v1/providers/{provider_id}/adapter`: Provider adapter endpoint called by middleware to retrieve local records governed by verified ABDM consent.
+- `GET /api/v1/providers/{provider_id}/inbox`: Lists delivered FHIR bundles and receipts received by the provider node.
+
+### Patient Portal
+- `GET /api/v1/patient/profile`: Retrieves authenticated patient demographics and UPID.
+- `GET /api/v1/patient/consents`: Lists all consent requests and active permissions for the patient.
+- `POST /api/v1/patient/consents/{consent_id}/decide`: Actionable consent decision (`GRANTED` or `DENIED`).
+- `POST /api/v1/patient/consents/{consent_id}/revoke`: Immediately revokes previously granted consent.
+- `GET /api/v1/patient/hospitals`: Lists healthcare providers with mapped patient accounts.
+- `GET /api/v1/patient/records`: Aggregates patient's clinical records on-demand across connected nodes without middleware database persistence.
+- `GET /api/v1/patient/sharing-history`: Lists historical data exchange transfers involving the patient.
+
+### Audit & Governance
+- `GET /api/v1/audit/logs`: Paginated search of immutable audit events with actor, organization, action, outcome, and text search filters.
+- `GET /api/v1/audit/stats`: Summarizes total events, outcomes, and activity distribution.
 
 ---
 
-### 3.5 Map Clinical Terminology
+## 3. Standard Error Codes
 
-`POST /api/v1/terminology/map`
-
-- **Purpose:** Maps normalized test names to verified LOINC or synthetic concepts using an explicit local registry. Evaluates specimen and unit constraints, applies upstream quality guardrails, and classifies uncertainty.
-- **Content-Type:** `application/json`
-- **Request Model:** `NormalizationResponse` envelope from M2.
-- **Response Model:** `TerminologyBatchResponse`
-- **Representative Response:**
-  ```json
-  {
-    "batch_id": "9a1c02e1-4567-4a11-b88d-12f6fa38b111",
-    "normalization_batch_id": "7b2c01e8-7821-4f10-b99d-83f6fa38b25a",
-    "source_provider_id": "HOSPITAL_B",
-    "total_records": 1,
-    "mapped_records": 1,
-    "ambiguous_records": 0,
-    "review_required_records": 0,
-    "unmapped_records": 0,
-    "records": [
-      {
-        "record_index": 0,
-        "canonical": { ... },
-        "quality_status": "valid",
-        "quality_issues": [],
-        "terminology_mapping": {
-          "status": "mapped",
-          "target_system": "http://loinc.org",
-          "target_code": "4548-4",
-          "target_display": "Hemoglobin A1c/Hemoglobin.total in Blood",
-          "terminology_version": "2.76",
-          "mapping_id": "MAP-LOINC-002",
-          "reason_code": "EXACT_MATCH",
-          "review_required": false,
-          "candidate_mappings": []
-        }
-      }
-    ]
-  }
-  ```
-
----
-
-### 3.6 Assess Patient Identity Linkage Safety
-
-`POST /api/v1/identity/assess`
-
-- **Purpose:** Evaluates pairs of synthetic patient references in cross-provider exchange workflows. Enforces provider scoping, requires authorized synthetic linkage tokens for positive linkage, and flags conflicts for human review without merging records.
-- **Content-Type:** `application/json`
-- **Request Model:** `IdentityAssessmentBatchRequest`
-- **Response Model:** `IdentityAssessmentResponse`
-- **Representative Request:**
-  ```json
-  {
-    "comparisons": [
-      {
-        "comparison_id": "CMP-001",
-        "left_reference": {
-          "source_provider_id": "HOSPITAL_A",
-          "patient_reference": "SYN_PATIENT_001",
-          "identity_token": "SYN_LINK_TOKEN_ALPHA_001",
-          "demographics": {
-            "full_name": "Ravi Kumar",
-            "date_of_birth": "1985-06-15",
-            "gender": "male"
-          }
-        },
-        "right_reference": {
-          "source_provider_id": "HOSPITAL_B",
-          "patient_reference": "SYN_PATIENT_002",
-          "identity_token": "SYN_LINK_TOKEN_ALPHA_001",
-          "demographics": {
-            "full_name": "Ravi Kumar",
-            "date_of_birth": "1985-06-15",
-            "gender": "male"
-          }
-        }
-      }
-    ]
-  }
-  ```
-- **Representative Response:**
-  ```json
-  {
-    "batch_id": "8e4d2a1b-3c4d-4e5f-a6b7-c8d9e0f1a2b3",
-    "total_comparisons": 1,
-    "same_identity_count": 1,
-    "different_identity_count": 0,
-    "possible_match_count": 0,
-    "review_required_count": 0,
-    "unresolved_count": 0,
-    "evaluations": [
-      {
-        "comparison_id": "CMP-001",
-        "outcome": "same_identity",
-        "confidence": 1.0,
-        "reason_code": "STRONG_TOKEN_MATCH",
-        "details": "Authorized synthetic linkage fixture verified across distinct provider contexts without demographic conflicts."
-      }
-    ]
-  }
-  ```
+| HTTP Status | Error Code | Description |
+| :--- | :--- | :--- |
+| **400** | `INVALID_PROVIDER_ID` | Unknown or disallowed source healthcare provider. |
+| **400** | `RECORD_LIMIT_EXCEEDED`| Ingestion/normalization batch exceeds 1,000 records. |
+| **400** | `MIXED_PATIENT_BATCH` | FHIR assembly batch contains multiple patients without explicit filter. |
+| **401** | `AUTHENTICATION_FAILED`| Missing, expired, or invalid JWT signature. |
+| **403** | `CONSENT_REVOKED` | Authorizing consent artefact has been revoked. |
+| **403** | `CONSENT_DENIED` | Authorizing consent artefact was denied by the patient. |
+| **403** | `CONSENT_EXPIRED` | Consent temporal validity deadline has elapsed. |
+| **403** | `CONSENT_RETENTION_EXPIRED` | Current timestamp has reached or exceeded `data_erase_at`. |
+| **403** | `CONSENT_PATIENT_MISMATCH` | Consent patient ID does not match bundle patient subject. |
+| **403** | `CONSENT_HIU_MISMATCH` | Requesting or authenticated HIU does not match consent. |
+| **403** | `CONSENT_DATE_OUT_OF_RANGE` | Observations fall outside consented clinical date range. |
+| **404** | `CONSENT_NOT_FOUND` | Specified consent artefact ID does not exist in registry. |
+| **404** | `PATIENT_NOT_FOUND` | Universal Patient Identity or local patient not found. |
+| **404** | `ORGANIZATION_NOT_FOUND` | Target organization does not exist. |
+| **409** | `IDEMPOTENCY_CONFLICT` | Reused idempotency key with conflicting request payload. |
+| **409** | `MAPPING_CONFLICT` | Provider local patient ID is already mapped to another UPID. |
+| **409** | `INVALID_STATE_TRANSITION` | Attempted illegal state transition on exchange job. |
+| **413** | `PAYLOAD_TOO_LARGE` | Upload size exceeds configured 1MB limit. |
+| **422** | `FHIR_ASSEMBLY_FAILED` | All target patient records withheld due to quality rejection. |

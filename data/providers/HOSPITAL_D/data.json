@@ -1,0 +1,35 @@
+{
+  "name": "Sunrise Apex Specialty Hospital, Coimbatore",
+  "patients": [],
+  "records": [],
+  "inbox": [
+    {
+      "delivery_id": "DELIV-beb25ea8-fc2c-44ca-9906-77c8958fb8fd",
+      "job_id": "JOB-EXCH-ec6323b3-027c-4df2-8c04-18ef0a76753c",
+      "sender_provider_id": "LAB_E",
+      "sender_provider_name": "LAB_E",
+      "patient_name": "Priya Dharshan",
+      "universal_patient_id": "UPID-F7908E72",
+      "local_patient_id": "LOCAL-UPID-F7908E72",
+      "data_type": "FHIR R4 DiagnosticReport",
+      "received_at": "2026-10-28T17:04:21.121477+00:00",
+      "integrity_digest": "d1d2bdde861f01af1c2a6688bd6e743c1fda0a1abd54cd2d4a597866dd75eab0",
+      "receipt_id": "RCPT-SIM-5c18bef2-f05d-4ded-a0d9-4803f402d20a",
+      "summary": "Received 1 observations (Blood Glucose Fasting) for UPID-F7908E72 from LAB_E"
+    },
+    {
+      "delivery_id": "DELIV-fc93bf8c-eef3-4522-ba55-e1a1f6f2b58b",
+      "job_id": "JOB-EXCH-17ba69d0-eeaf-4b7c-be5b-5bcca751d0db",
+      "sender_provider_id": "LAB_E",
+      "sender_provider_name": "LAB_E",
+      "patient_name": "Priya Dharshan",
+      "universal_patient_id": "UPID-F7908E72",
+      "local_patient_id": "LOCAL-UPID-F7908E72",
+      "data_type": "FHIR R4 DiagnosticReport",
+      "received_at": "2026-10-28T17:01:42.858268+00:00",
+      "integrity_digest": "797a19f4ad847a7b3748cf4d24fcd7c8df1bed0455126ba8da8c97bb8806af8d",
+      "receipt_id": "RCPT-SIM-efd875b7-cc8e-4622-9680-7d7a2ba4655b",
+      "summary": "Received 1 observations (Blood Glucose Fasting) for UPID-F7908E72 from LAB_E"
+    }
+  ]
+}

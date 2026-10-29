@@ -1,0 +1,428 @@
+{
+  "name": "Central Diagnostic Laboratory, Tirunelveli",
+  "patients": [
+    {
+      "local_patient_id": "1234",
+      "full_name": "Priyadharshan S",
+      "dob": "2006-01-19",
+      "gender": "MALE",
+      "phone": "9894810613",
+      "abha_address": "",
+      "created_at": "2026-10-28T16:44:58.184Z",
+      "active": true
+    },
+    {
+      "local_patient_id": "1235",
+      "full_name": "Gokulnanthan",
+      "dob": "2006-01-01",
+      "gender": "MALE",
+      "phone": "1234567890",
+      "abha_address": "",
+      "created_at": "2026-10-28T16:46:35.304Z",
+      "active": true
+    }
+  ],
+  "records": [
+    {
+      "record_id": "REC-LAB_C-59E2B2",
+      "local_patient_id": "1234",
+      "category": "OBSERVATION",
+      "test_name": "Systolic Blood Pressure",
+      "value": 145,
+      "unit": "mmHg",
+      "specimen": "Physical",
+      "reference_range": "90 - 120 mmHg",
+      "interpretation": "Hypertension Stage 1",
+      "effective_datetime": "2026-10-28T16:45:35.302118+00:00",
+      "attending_practitioner": "Attending Physician",
+      "notes": "Clinical manual blood pressure"
+    },
+    {
+      "record_id": "REC-LAB_C-306465",
+      "local_patient_id": "1234",
+      "category": "OBSERVATION",
+      "test_name": "Diastolic Blood Pressure",
+      "value": 84,
+      "unit": "mm[Hg]",
+      "specimen": "Physical",
+      "reference_range": "60 - 80 mm[Hg]",
+      "interpretation": "Pre-hypertension",
+      "effective_datetime": "2026-10-28T16:45:40.637361+00:00",
+      "attending_practitioner": "Attending Physician",
+      "notes": "Diastolic vascular resistance"
+    },
+    {
+      "record_id": "REC-LAB_C-39822F",
+      "local_patient_id": "1234",
+      "category": "DIAGNOSTIC",
+      "test_name": "GeneXpert MTB/RIF",
+      "value": "Not Detected",
+      "unit": "",
+      "specimen": "Sputum",
+      "reference_range": "Not Detected",
+      "interpretation": "Normal",
+      "effective_datetime": "2026-10-28T16:45:49.989493+00:00",
+      "attending_practitioner": "Attending Physician",
+      "notes": "Molecular sputum clearance"
+    },
+    {
+      "record_id": "REC-LAB_C-9C69E7",
+      "local_patient_id": "1235",
+      "category": "DIAGNOSTIC",
+      "test_name": "Dengue Virus NS1 Antigen",
+      "value": "Negative",
+      "unit": "",
+      "specimen": "Serum",
+      "reference_range": "Negative",
+      "interpretation": "Normal",
+      "effective_datetime": "2026-10-28T16:46:46.669865+00:00",
+      "attending_practitioner": "Attending Physician",
+      "notes": "NS1 antigen not detected"
+    },
+    {
+      "record_id": "REC-LAB_C-2C11FD",
+      "local_patient_id": "1235",
+      "category": "LABORATORY",
+      "test_name": "Malaria Blood Smear",
+      "value": "P. vivax trophozoites seen",
+      "unit": "",
+      "specimen": "Blood",
+      "reference_range": "No Parasites Detected",
+      "interpretation": "Positive",
+      "effective_datetime": "2026-10-28T16:46:51.465130+00:00",
+      "attending_practitioner": "Attending Physician",
+      "notes": "Microscopic peripheral smear"
+    }
+  ],
+  "inbox": [
+    {
+      "delivery_id": "DELIV-54b5dafc-77c4-4514-9e00-35843d38ae2b",
+      "job_id": "JOB-EXCH-13fff885-7de8-432f-b76f-900755ca4d0f",
+      "sender_provider_id": "CLINIC_F",
+      "sender_provider_name": "CLINIC_F",
+      "patient_name": "SIva",
+      "universal_patient_id": "UPID-45675A24",
+      "local_patient_id": "LOCAL-UPID-45675A24",
+      "data_type": "FHIR R4 DiagnosticReport",
+      "received_at": "2026-10-29T06:38:52.044249+00:00",
+      "integrity_digest": "4e38ccd516bbf2418f17ab41be4aca8fbb32edeb1d7e4921cf399dc0f941916d",
+      "receipt_id": "RCPT-SIM-8806b094-b08e-4e19-9693-f0e41689d0bf",
+      "summary": "Received 1 observations (Blood Glucose Fasting) for UPID-45675A24 from CLINIC_F",
+      "records": [
+        {
+          "record_id": "REC-CLINIC_F-AUTO",
+          "test_name": "Blood Glucose Fasting",
+          "value": "105.0",
+          "unit": "mg/dL",
+          "specimen": "blood",
+          "reference_range": "70 - 100 mg/dL",
+          "interpretation": "Elevated",
+          "category": "LABORATORY",
+          "effective_datetime": "2026-10-29T06:38:51.983124+00:00",
+          "attending_practitioner": "Attending Staff",
+          "notes": "Automated clinical observation"
+        }
+      ],
+      "fhir_bundle": {
+        "resourceType": "Bundle",
+        "id": "a7669f94-8cd3-4b42-b637-5022fcde15aa",
+        "meta": null,
+        "identifier": {
+          "system": "https://healthbridge.tn.gov.in/bundle",
+          "value": "a7669f94-8cd3-4b42-b637-5022fcde15aa"
+        },
+        "type": "document",
+        "timestamp": "2026-10-29T06:38:51.986163+00:00",
+        "entry": [
+          {
+            "fullUrl": "urn:uuid:491fa7d5-6167-4103-919f-dfe0902cd335",
+            "resource": {
+              "resourceType": "Composition",
+              "id": "491fa7d5-6167-4103-919f-dfe0902cd335",
+              "meta": null,
+              "status": "preliminary",
+              "type": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "11502-2",
+                    "display": "Laboratory report"
+                  }
+                ],
+                "text": "Laboratory report"
+              },
+              "category": null,
+              "subject": {
+                "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+                "display": "Patient"
+              },
+              "date": "2026-10-29T06:38:51.986163+00:00",
+              "author": [
+                {
+                  "reference": "urn:uuid:3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+                  "display": "CLINIC_F"
+                }
+              ],
+              "title": "Laboratory Diagnostic Report",
+              "section": [
+                {
+                  "title": "Diagnostic Report",
+                  "code": null,
+                  "entry": [
+                    {
+                      "reference": "urn:uuid:5a538a1e-ee83-4ae8-b65e-6b01379f1d65",
+                      "display": null
+                    }
+                  ]
+                }
+              ],
+              "attester": null
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+            "resource": {
+              "resourceType": "Patient",
+              "id": "858877fa-f515-4e3a-aa24-e68c77df5a89",
+              "meta": null,
+              "identifier": [
+                {
+                  "system": "https://healthbridge.tn.gov.in/providers/CLINIC_F/patient",
+                  "value": "GVC 9082"
+                },
+                {
+                  "system": "https://healthbridge.tn.gov.in/identity/universal",
+                  "value": "UPID-45675A24"
+                }
+              ],
+              "active": true
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+            "resource": {
+              "resourceType": "Organization",
+              "id": "3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+              "meta": null,
+              "identifier": [
+                {
+                  "system": "https://healthbridge.tn.gov.in/providers",
+                  "value": "CLINIC_F"
+                }
+              ],
+              "name": "CLINIC_F"
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:527e93ac-e3da-4e9d-841a-92d6496d346b",
+            "resource": {
+              "resourceType": "Specimen",
+              "id": "527e93ac-e3da-4e9d-841a-92d6496d346b",
+              "meta": null,
+              "type": {
+                "text": "blood",
+                "coding": null
+              },
+              "subject": {
+                "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+                "display": null
+              },
+              "collection": null
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:5a538a1e-ee83-4ae8-b65e-6b01379f1d65",
+            "resource": {
+              "resourceType": "DiagnosticReport",
+              "id": "5a538a1e-ee83-4ae8-b65e-6b01379f1d65",
+              "meta": null,
+              "status": "preliminary",
+              "category": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/v2-0074",
+                      "code": "LAB",
+                      "display": "Laboratory"
+                    }
+                  ],
+                  "text": null
+                }
+              ],
+              "code": {
+                "coding": [
+                  {
+                    "system": "http://loinc.org",
+                    "code": "11502-2",
+                    "display": "Laboratory report"
+                  }
+                ],
+                "text": "Laboratory Diagnostic Report"
+              },
+              "subject": {
+                "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+                "display": null
+              },
+              "issued": "2026-10-29T06:38:51.986163+00:00",
+              "performer": [
+                {
+                  "reference": "urn:uuid:3b5c1ca7-3286-4901-bb22-10cad4fe1f23",
+                  "display": null
+                }
+              ],
+              "specimen": [
+                {
+                  "reference": "urn:uuid:527e93ac-e3da-4e9d-841a-92d6496d346b",
+                  "display": null
+                }
+              ],
+              "result": [
+                {
+                  "reference": "urn:uuid:c8ef90be-ec52-4798-8cd9-f07a976f6fa5",
+                  "display": null
+                }
+              ]
+            }
+          },
+          {
+            "fullUrl": "urn:uuid:c8ef90be-ec52-4798-8cd9-f07a976f6fa5",
+            "resource": {
+              "resourceType": "Observation",
+              "id": "c8ef90be-ec52-4798-8cd9-f07a976f6fa5",
+              "meta": null,
+              "status": "preliminary",
+              "category": [
+                {
+                  "coding": [
+                    {
+                      "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                      "code": "laboratory",
+                      "display": "Laboratory"
+                    }
+                  ],
+                  "text": null
+                }
+              ],
+              "code": {
+                "coding": null,
+                "text": "Blood Glucose Fasting"
+              },
+              "subject": {
+                "reference": "urn:uuid:858877fa-f515-4e3a-aa24-e68c77df5a89",
+                "display": null
+              },
+              "effectiveDateTime": "2026-10-29T06:38:51.983124+00:00",
+              "valueQuantity": {
+                "value": 105.0,
+                "unit": "mg/dL",
+                "system": "http://unitsofmeasure.org",
+                "code": "mg/dL"
+              },
+              "valueString": null,
+              "note": [
+                {
+                  "text": "Clinical terminology unmapped (reason: NO_MAPPING_FOUND). Preserved with source investigation name."
+                }
+              ],
+              "specimen": {
+                "reference": "urn:uuid:527e93ac-e3da-4e9d-841a-92d6496d346b",
+                "display": null
+              }
+            }
+          }
+        ]
+      },
+      "module_results": {
+        "overall_score": 98.5,
+        "overall_grade": "A+",
+        "m1_ingestion": {
+          "name": "M1 Data Ingestion & Extraction",
+          "status": "SUCCESS",
+          "score": 100.0,
+          "ingestion_id": "ING-2A5E0C00",
+          "records_ingested": 1,
+          "source_format": "Provider Adapter EHR / JSON",
+          "extracted_fields": [
+            "patient_reference",
+            "test_name",
+            "value",
+            "unit",
+            "specimen",
+            "observed_at"
+          ],
+          "details": "Successfully ingested 1 clinical records from CLINIC_F adapter."
+        },
+        "m2_normalization": {
+          "name": "M2 Canonical Normalization",
+          "status": "VALID",
+          "score": 100.0,
+          "cleanliness_rate": "100%",
+          "specimen_normalized": true,
+          "units_standardized": true,
+          "quality_issues_count": 0,
+          "details": "All 1 observations normalized to canonical schema without quality degradation."
+        },
+        "m3_terminology": {
+          "name": "M3 Clinical Terminology Mapping",
+          "status": "TEXT_PRESERVED",
+          "score": 90.0,
+          "mapped_count": 0,
+          "unmapped_count": 1,
+          "ambiguous_count": 0,
+          "registry_version": "1.0.0",
+          "loinc_codes": [],
+          "details": "0/1 observations matched to standard LOINC concepts."
+        },
+        "m4_identity_safety": {
+          "name": "M4 Patient Identity Safety",
+          "status": "VERIFIED",
+          "score": 100.0,
+          "universal_patient_id": "UPID-45675A24",
+          "source_local_id": "GVC 9082",
+          "target_local_id": "LOCAL-UPID-45675A24",
+          "linkage_confidence": "100%",
+          "collision_check": "PASSED (No demographic collision detected)",
+          "details": "Deterministic identity binding verified for UPID-45675A24 across CLINIC_F and LAB_C."
+        },
+        "m5_fhir_assembly": {
+          "name": "M5 FHIR R4 Document Assembly",
+          "status": "ASSEMBLED",
+          "score": 100.0,
+          "bundle_type": "document",
+          "topology": "Composition (entry[0]) -> DiagnosticReport -> Observation",
+          "total_entries": 6,
+          "reference_integrity": "100% (urn:uuid verified closed internal references)",
+          "details": "Generated authentic FHIR R4 Document Bundle with 6 resources."
+        },
+        "m6_security_gateway": {
+          "name": "M6 ABDM Consent & Security Gateway",
+          "status": "AUTHORIZED",
+          "score": 100.0,
+          "consent_id": "CONSENT-REQ-1B1E1F",
+          "gates_evaluated": 6,
+          "gates_passed": 6,
+          "gate_breakdown": {
+            "gate_1_status": "GRANTED",
+            "gate_2_temporal": "ACTIVE & UNEXPIRED",
+            "gate_3_subject": "MATCHED (UPID-45675A24)",
+            "gate_4_hiu": "AUTHORIZED (LAB_C)",
+            "gate_5_hip": "AUTHORIZED (CLINIC_F)",
+            "gate_6_integrity": "CRYPTOGRAPHICALLY_VERIFIED"
+          },
+          "details": "All 6 M6 security gates cleared for consent CONSENT-REQ-1B1E1F."
+        },
+        "m7_exchange_delivery": {
+          "name": "M7 Reliable Exchange & Delivery",
+          "status": "DELIVERED",
+          "score": 100.0,
+          "recipient_id": "LAB_C",
+          "receipt_id": "RCPT-SIM-8806b094-b08e-4e19-9693-f0e41689d0bf",
+          "payload_digest": "4e38ccd516bbf2418f17ab41be4aca8fbb32edeb1d7e4921cf399dc0f941916d",
+          "delivery_acknowledged_at": "2026-10-29T06:38:52.044249+00:00",
+          "attempts": 1,
+          "details": "Secure delivery confirmed by simulated receiver LAB_C."
+        }
+      }
+    }
+  ]
+}

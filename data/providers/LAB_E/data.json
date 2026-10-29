@@ -1,0 +1,32 @@
+{
+  "name": "Elite Pathology & Molecular Labs, Tiruchirappalli",
+  "patients": [
+    {
+      "local_patient_id": "5264",
+      "full_name": "Gokulnanthan",
+      "dob": "2006-02-05",
+      "gender": "MALE",
+      "phone": "7894561230",
+      "abha_address": "",
+      "created_at": "2026-10-28T16:47:29.019Z",
+      "active": true
+    }
+  ],
+  "records": [
+    {
+      "record_id": "REC-LAB_E-60C344",
+      "local_patient_id": "5264",
+      "category": "OBSERVATION",
+      "test_name": "Systolic Blood Pressure",
+      "value": 145,
+      "unit": "mmHg",
+      "specimen": "Physical",
+      "reference_range": "90 - 120 mmHg",
+      "interpretation": "Hypertension Stage 1",
+      "effective_datetime": "2026-10-28T16:47:35.611597+00:00",
+      "attending_practitioner": "Attending Physician",
+      "notes": "Clinical manual blood pressure"
+    }
+  ],
+  "inbox": []
+}
